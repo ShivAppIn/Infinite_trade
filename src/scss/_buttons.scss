@@ -50,7 +50,13 @@
         background-color: $scrips-bg;
     }
 
-  
+    &:focus {
+        outline: none;
+
+        .mat-button-focus-overlay {
+            background-color: transparent;
+        }
+    }
 
     &.btn-black-outline {
         background-color: transparent;
@@ -172,16 +178,6 @@
     opacity: 0.75;
     cursor: not-allowed;
     pointer-events: none;
-}
-
-.btn {
-    &:focus {
-        outline: none;
-
-        .mat-button-focus-overlay {
-            background-color: transparent;
-        }
-    }
 }
 
 i {

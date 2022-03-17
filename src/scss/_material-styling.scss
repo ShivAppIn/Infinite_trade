@@ -324,6 +324,9 @@ mat-icon,
     &::placeholder {
         color: rgba(0, 0, 0, 0.7);
     }
+    &.mat-form-field-autofill-control {
+        text-overflow: ellipsis;
+    }
 }
 
 .mat-form-field-label {
@@ -380,12 +383,6 @@ mat-icon,
 
 .mat-snack-bar-container {
     height: 100%;
-}
-
-.mat-input-element {
-    &.mat-form-field-autofill-control {
-        text-overflow: ellipsis;
-    }
 }
 
 .mat-form-field-appearance-outline {
