@@ -63,31 +63,31 @@ export class BannersListingComponent extends Pagination implements OnInit {
   get f() { return this.filterForm.controls }  //return all form controls
 
   permissionHandler() {
-    let permission = this._common.getPermissionByModuleId(MODULE_ID_OF.BANNERS);
-    if (!isObjEmpty(permission)) {
-      if (!permission.add && !permission.edit && !permission.delete && !permission.activeInactive) {
-        this.removeOnlyAddBtn();
-        this.removeActionObj();
-      } else if (!permission.edit && !permission.delete && !permission.activeInactive) {
-        this.removeActionObj();
-      } else if (!permission.add && !permission.edit) {
-        this.removeOnlyAddBtn();
-        this.removeActionOperation(1);
-      } else {
-        if (!permission.add) {
-          this.removeOnlyAddBtn();
-        }
-        if (!permission.edit) {
-          this.removeActionOperation(1);
-        }
-        if (!permission.delete) {
-          this.removeActionOperation(3);
-        }
-        if (!permission.activeInactive) {
-          this.removeActionOperation(2);
-        }
-      }
-    }
+    // let permission = this._common.getPermissionByModuleId(MODULE_ID_OF.BANNERS);
+    // if (!isObjEmpty(permission)) {
+    //   if (!permission.add && !permission.edit && !permission.delete && !permission.activeInactive) {
+    //     this.removeOnlyAddBtn();
+    //     this.removeActionObj();
+    //   } else if (!permission.edit && !permission.delete && !permission.activeInactive) {
+    //     this.removeActionObj();
+    //   } else if (!permission.add && !permission.edit) {
+    //     this.removeOnlyAddBtn();
+    //     this.removeActionOperation(1);
+    //   } else {
+    //     if (!permission.add) {
+    //       this.removeOnlyAddBtn();
+    //     }
+    //     if (!permission.edit) {
+    //       this.removeActionOperation(1);
+    //     }
+    //     if (!permission.delete) {
+    //       this.removeActionOperation(3);
+    //     }
+    //     if (!permission.activeInactive) {
+    //       this.removeActionOperation(2);
+    //     }
+    //   }
+    // }
   }
 
   removeOnlyAddBtn() {
