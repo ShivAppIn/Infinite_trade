@@ -217,9 +217,9 @@ export const PERMISSIONS = [
 // @Dashboard_button_text
 
 export const BUTTON_TEXT = {
-  EMPLOYEES: 'New User',
-  COMPANY: 'New Company',
-  OEM: 'Add OEM',
+  EMPLOYEES: 'NEW USER',
+  COMPANY: 'NEW COMPANY',
+  OEM: 'ADD OEM',
 };
 
 export const TABLE_ERROR_MSG = {
