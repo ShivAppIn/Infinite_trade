@@ -1,41 +1,43 @@
 <div class="confirmation-modal popup-ui expand-popup">
     <form [formGroup]="addUserForm" (ngSubmit)="addUser()">
-    <div class="popup-header">
-        <h4>Add Employee</h4>
-        <span class="material-icons close-icon" (click)="close()">close</span>
-    </div>
-    <div class="popup-body text-left">
-        <div class="popup-form">
-            <div class="inner-form">
-                <mat-label class="mat-label">FULL NAME</mat-label>
-                <mat-form-field appearance="outline" class="passwordFormField">
-                    <input matInput formControlName="fullName"/>
-                </mat-form-field>
-            </div>
-            <div class="inner-form">
-                <mat-label class="mat-label">EMAIL ADDRESS</mat-label>
-                <mat-form-field appearance="outline" class="passwordFormField">
-                    <input matInput formControlName="email"/>
-                </mat-form-field>
-            </div>
-            <div class="inner-form">
-                <mat-label class="mat-label">CONTACT</mat-label>
-                <mat-form-field appearance="outline" class="passwordFormField">
-                    <input matInput formControlName="contact"/>
-                </mat-form-field>
-            </div>
-            <div class="inner-form">
-                <mat-label class="mat-label">COMPANY</mat-label>
-                <mat-form-field appearance="outline" class="passwordFormField">
-                    <input matInput formControlName="company"/>
-                </mat-form-field>
+        <div class="popup-header">
+            <div class="popup-inner-header">
+                <h4>Add Employee</h4>
+                <span class="material-icons close-icon" (click)="close()">close</span>
             </div>
         </div>
-    </div>
-    <div class="popup-footer">
-        <div class="single-btn">
-            <button type="submit" mat-flat-button class="btn btn-primary butn butn__new">ADD</button>
+        <div class="popup-body text-left">
+            <div class="popup-form">
+                <div class="inner-form">
+                    <mat-label class="mat-label">FULL NAME</mat-label>
+                    <mat-form-field appearance="outline" class="passwordFormField">
+                        <input matInput formControlName="fullName" />
+                    </mat-form-field>
+                </div>
+                <div class="inner-form">
+                    <mat-label class="mat-label">EMAIL ADDRESS</mat-label>
+                    <mat-form-field appearance="outline" class="passwordFormField">
+                        <input matInput formControlName="email" />
+                    </mat-form-field>
+                </div>
+                <div class="inner-form">
+                    <mat-label class="mat-label">CONTACT</mat-label>
+                    <mat-form-field appearance="outline" class="passwordFormField">
+                        <input matInput formControlName="contact" />
+                    </mat-form-field>
+                </div>
+                <div class="inner-form">
+                    <mat-label class="mat-label">TRADE</mat-label>
+                    <mat-form-field appearance="outline" class="passwordFormField">
+                        <input matInput formControlName="company" />
+                    </mat-form-field>
+                </div>
+            </div>
         </div>
-    </div>
-</form>
+        <div class="popup-footer">
+            <div class="single-btn">
+                <button type="submit" mat-flat-button class="btn btn-primary butn butn__new">ADD</button>
+            </div>
+        </div>
+    </form>
 </div>

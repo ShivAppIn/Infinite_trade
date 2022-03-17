@@ -10,32 +10,35 @@
 			<mat-error *ngIf="frmCtrl.email.hasError('required')">{{errorMsg?.EMAIL_REQ}}</mat-error>
 			<mat-error *ngIf="frmCtrl.email.hasError('pattern')">{{errorMsg?.INVALID_EMAIL}}</mat-error>
 		</mat-form-field>
-		
-		<mat-label class="mat-label">PASSWORD</mat-label>
-		<mat-form-field appearance="outline" class="passwordFormField">
-			<input autocomplete="off" #pass matInput placeholder="Your Password" formControlName="password" required
-				(keydown.space)="$event.preventDefault()" [maxlength]="limit?.MAX_PASSWORD_LENGTH"
-				[type]="hide ? 'password' : 'text'" />
-			<mat-icon class="pointer" matSuffix (click)="hide = !hide">
-				<img *ngIf="hide" src="assets/images/svg/eye-slash.svg" alt="Hidden">
-				<img *ngIf="!hide" src="assets/images/svg/eye.svg" alt="Visible">
-				<!-- {{hide ? 'visibility_off' : 'visibility'}} -->
-			</mat-icon>
-			<mat-error *ngIf="frmCtrl.password.hasError('required')">{{errorMsg?.PASSWORD_REQ}}
-			</mat-error>
-			<mat-error *ngIf="frmCtrl.password.hasError('pattern')">{{errorMsg?.INVALID_EMAIL_PASS}}
-			</mat-error>
-			<mat-error *ngIf="frmCtrl.password.hasError('space')">{{errorMsg?.NO_SPACE_PASSWORD}}
-			</mat-error>
-		</mat-form-field>
 
-		<div class="actions">
-			<a type="button" class="forget-btn" mat-button [routerLink]="['ABS_FORGOT_PASSWORD' | absolutePath]">
-				FORGOT PASSWORD?
-			</a>
+		<mat-label class="mat-label">PASSWORD</mat-label>
+		<div class="forget-wrapper">
+			<mat-form-field appearance="outline" class="passwordFormField">
+				<input autocomplete="off" #pass matInput placeholder="Your Password" formControlName="password" required
+					(keydown.space)="$event.preventDefault()" [maxlength]="limit?.MAX_PASSWORD_LENGTH"
+					[type]="hide ? 'password' : 'text'" />
+				<mat-icon class="pointer" matSuffix (click)="hide = !hide">
+					<img *ngIf="hide" src="assets/images/svg/eye-slash.svg" alt="Hidden">
+					<img *ngIf="!hide" src="../../../../../assets/images/ic_show.svg" alt="Visible">
+					<!-- {{hide ? 'visibility_off' : 'visibility'}} -->
+				</mat-icon>
+				<mat-error *ngIf="frmCtrl.password.hasError('required')">{{errorMsg?.PASSWORD_REQ}}
+				</mat-error>
+				<mat-error *ngIf="frmCtrl.password.hasError('pattern')">{{errorMsg?.INVALID_EMAIL_PASS}}
+				</mat-error>
+				<mat-error *ngIf="frmCtrl.password.hasError('space')">{{errorMsg?.NO_SPACE_PASSWORD}}
+				</mat-error>
+			</mat-form-field>
+			<div class="actions">
+				<a class="forget-btn" [routerLink]="['ABS_FORGOT_PASSWORD' | absolutePath]">
+					FORGOT PASSWORD?
+				</a>
+			</div>
 		</div>
+
 		<div class="btn-cover">
-			<button type="submit" mat-stroked-button class="btn btn-primary butn butn__new" [disabled]="loginForm.invalid">Login</button>
+			<button type="submit" mat-stroked-button class="btn btn-primary butn butn__new"
+				[disabled]="loginForm.invalid">Login</button>
 		</div>
 	</form>
 </div>

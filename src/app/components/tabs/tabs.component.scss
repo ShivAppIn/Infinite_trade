@@ -1,31 +1,57 @@
 @import "../../../scss/var";
 
-.tabbing_chat {
-    display: inline-block;
-    overflow: auto;
-    width: 100%;
+// .tabbing_chat {
+//     display: inline-block;
+//     overflow: auto;
+//     width: 100%;
 
-    .mat-tab-nav-bar {
-        overflow: auto;
+//     .mat-tab-nav-bar {
+//         overflow: auto;
 
-        .mat-tab-link {
-            font-size: 15px;
-            font-weight: 500;
-            min-width: 120px;
-            font-size: 14px;
-            font-weight: 600;
+//         .mat-tab-link {
+//             font-size: 15px;
+//             font-weight: 500;
+//             min-width: 120px;
+//             font-size: 14px;
+//             font-weight: 600;
 
-            &.mat-tab-label-active {
-                border-radius: 6px 6px 0px 0px;
-                opacity: 1;
-                color: $primary;
-            }
-        }
-    }
-}
+//             &.mat-tab-label-active {
+//                 border-radius: 6px 6px 0px 0px;
+//                 opacity: 1;
+//                 color: $primary;
+//             }
+//         }
+//     }
+// }
 
 :host ::ng-deep {
     .mat-ink-bar {
         background-color: $primary !important;
+    }
+    .mat-tab-link {
+        font-weight: 700 !important;
+        opacity: 1 !important;
+        color: rgba(0, 0, 0, 0.87);
+        margin-right: 15px;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        background-color: #f2f2f2;
+    }
+
+    .mat-tab-label {
+        border: 1px solid transparent !important;
+        border-top-left-radius: 0.25rem !important;
+        border-top-right-radius: 0.25rem !important;
+    }
+
+    .mat-tab-label-active {
+        color: #495057 !important;
+        background-color: #fff !important;
+        border-color: #dee2e6 #dee2e6 #fff !important;
+        border: 2px solid black;
+    }
+
+    .mat-ink-bar {
+        display: none !important;
     }
 }

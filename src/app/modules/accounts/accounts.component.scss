@@ -24,7 +24,7 @@
                 left: 0;
                 top: 0;
                 filter: blur(118px);
-                background:$primary;
+                background: $primary;
                 width: 100%;
                 height: 100%;
             }
@@ -89,14 +89,21 @@
         }
     }
 }
-
-.passwordFormField {
-    .mat-icon {
-        img {
-            width: 100%;
+.forget-wrapper {
+    position: relative;
+    .passwordFormField {
+        .mat-icon {
+            img {
+                width: 100%;
+            }
         }
-    }
-    .mat-form-field-suffix {
-        top: 7px !important;
+        .mat-form-field-suffix {
+            top: 7px !important;
+        }
+        .actions {
+            position: absolute;
+            right: 0;
+            bottom: 75px;
+        }
     }
 }

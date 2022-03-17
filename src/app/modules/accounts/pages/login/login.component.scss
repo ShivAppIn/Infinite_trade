@@ -4,11 +4,11 @@
 :host {
     @import "../../accounts.component.scss";
 }
-.head-text{
+.head-text {
     font-size: 30px;
-    color:$main-head;
+    color: $main-head;
 }
-.head-mini{
+.head-mini {
     font-size: 16px;
     color: $secondary;
     border-bottom: 1px solid $secondary-light;
@@ -25,6 +25,16 @@
                 }
             }
         }
+    }
+}
+
+.forget-wrapper {
+    position: relative;
+
+    .actions {
+        position: absolute;
+        right: 0;
+        bottom: 75px;
     }
 }
 

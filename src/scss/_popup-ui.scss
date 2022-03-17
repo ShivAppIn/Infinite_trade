@@ -2,39 +2,42 @@
 @import "../scss/var";
 
 .popup-ui {
-    background:#f1f1f2;
+    background: $white;
     .popup-header {
-        padding: 15px 20px;
-        background-color: $primary;
+        padding: 30px 20px 0px;
+        background-color: $white;
         border-radius: 3px 3px 0px 0px;
-        color: $white;
+        color: $black;
         position: relative;
         @include fpos(center, flex-start);
-
+        .popup-inner-header {
+            max-width: 432px;
+            padding-left: 88px;
+        }
         .close-icon {
             position: absolute;
-            right: 10px;
+            right: 34px;
             top: 50%;
             transform: translateY(-50%);
             z-index: 9;
             cursor: pointer;
-            color: $white;
+            color: $black;
         }
 
         .close-left {
             margin-right: 10px;
         }
-
         h4 {
-            color: $white;
+            color: $black;
             text-transform: capitalize;
             font-weight: 500;
+            font-size: 24px;
         }
     }
 
     .popup-body {
         text-align: center;
-        padding: 30px 20px;
+        padding: 20px 20px;
         max-height: calc(100vh - 160px);
         @include scroller;
         h4 {
@@ -63,7 +66,20 @@
         }
         .single-btn {
             text-align: left;
-            margin-left: 22px;
+            max-width: 432px;
+            width: 100%;
+            margin: 0px auto 20px;
+            button {
+                width: 100%;
+            }
+        }
+        .btn-ex-large {
+            max-width: 96%;
+            width: 100%;
+            margin: 0px auto 20px;
+            button {
+                width: 100%;
+            }
         }
     }
 }
