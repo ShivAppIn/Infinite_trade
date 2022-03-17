@@ -47,27 +47,27 @@ export class FaqComponent extends Pagination implements OnInit, OnDestroy {
 
   permissionHandler() {
     let permission = this._common.getPermissionByModuleId(MODULE_ID_OF.CMS);
-    if (!isObjEmpty(permission)) {
-      if (!permission.add && !permission.edit && !permission.delete) {
-        this.removeOnlyAddBtn();
-        this.removeActionObj();
-      } else if (!permission.edit && !permission.delete) {
-        this.removeActionObj();
-      } else if (!permission.add && !permission.edit) {
-        this.removeOnlyAddBtn();
-        this.removeActionOperation(1);
-      } else {
-        if (!permission.add) {
-          this.removeOnlyAddBtn();
-        }
-        if (!permission.edit) {
-          this.removeActionOperation(1);
-        }
-        if (!permission.delete) {
-          this.removeActionOperation(3);
-        }
-      }
-    }
+    // if (!isObjEmpty(permission)) {
+    //   if (!permission.add && !permission.edit && !permission.delete) {
+    //     this.removeOnlyAddBtn();
+    //     this.removeActionObj();
+    //   } else if (!permission.edit && !permission.delete) {
+    //     this.removeActionObj();
+    //   } else if (!permission.add && !permission.edit) {
+    //     this.removeOnlyAddBtn();
+    //     this.removeActionOperation(1);
+    //   } else {
+    //     if (!permission.add) {
+    //       this.removeOnlyAddBtn();
+    //     }
+    //     if (!permission.edit) {
+    //       this.removeActionOperation(1);
+    //     }
+    //     if (!permission.delete) {
+    //       this.removeActionOperation(3);
+    //     }
+    //   }
+    // }
   }
 
   removeOnlyAddBtn() {
