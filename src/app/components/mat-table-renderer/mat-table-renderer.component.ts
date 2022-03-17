@@ -175,32 +175,32 @@ export class MatTableRendererComponent extends Pagination implements OnInit, OnD
   }
 
   confirmationDialog(id: number, body: any, listType?) {
-    let message = LISTING_COMMON_MESSAGES.DELETE_MSG;
-    let title = LISTING_COMMON_MESSAGES.DELETE_TITLE;
-    body["action"] = this.API_EVENT.delete;
-    if (id == 2) {
-      if (body.data.status == this.API_EVENT.active) {
-        message = listType == 'User' ? LISTING_COMMON_MESSAGES.BLOCK_MSG : LISTING_COMMON_MESSAGES.INACTIVATE_MSG;
-        title = listType == 'User' ? LISTING_COMMON_MESSAGES.BLOCK_TITLE : LISTING_COMMON_MESSAGES.INACTIVATE_TITLE;
-        body["action"] = this.API_EVENT.block;
-      } else {
-        message = listType == 'User' ? LISTING_COMMON_MESSAGES.ACTIVE_MSG : LISTING_COMMON_MESSAGES.ACTIVATE_MSG;
-        title = listType == 'User' ? LISTING_COMMON_MESSAGES.ACTIVE_TITLE : LISTING_COMMON_MESSAGES.ACTIVATE_TITLE;
-        body["action"] = this.API_EVENT.active;
-      }
-    }
-    const dialog = this._dialog.open(ConfirmationModalComponent, {
-      data: {
-        title: title,
-        message: message,
-        listType: (body.action == this.API_EVENT.block || body.action == this.API_EVENT.delete) ? this.listType : ''
-      }
-    });
-    dialog.afterClosed().subscribe(result => {
-      if (result) {
-        this.status.emit(body);
-      }
-    });
+    // let message = LISTING_COMMON_MESSAGES.DELETE_MSG;
+    // let title = LISTING_COMMON_MESSAGES.DELETE_TITLE;
+    // body["action"] = this.API_EVENT.delete;
+    // if (id == 2) {
+    //   if (body.data.status == this.API_EVENT.active) {
+    //     message = listType == 'User' ? LISTING_COMMON_MESSAGES.BLOCK_MSG : LISTING_COMMON_MESSAGES.INACTIVATE_MSG;
+    //     title = listType == 'User' ? LISTING_COMMON_MESSAGES.BLOCK_TITLE : LISTING_COMMON_MESSAGES.INACTIVATE_TITLE;
+    //     body["action"] = this.API_EVENT.block;
+    //   } else {
+    //     message = listType == 'User' ? LISTING_COMMON_MESSAGES.ACTIVE_MSG : LISTING_COMMON_MESSAGES.ACTIVATE_MSG;
+    //     title = listType == 'User' ? LISTING_COMMON_MESSAGES.ACTIVE_TITLE : LISTING_COMMON_MESSAGES.ACTIVATE_TITLE;
+    //     body["action"] = this.API_EVENT.active;
+    //   }
+    // }
+    // const dialog = this._dialog.open(ConfirmationModalComponent, {
+    //   data: {
+    //     title: title,
+    //     message: message,
+    //     listType: (body.action == this.API_EVENT.block || body.action == this.API_EVENT.delete) ? this.listType : ''
+    //   }
+    // });
+    // dialog.afterClosed().subscribe(result => {
+    //   if (result) {
+    //     this.status.emit(body);
+    //   }
+    // });
   }
 
   applyFilter(event) {
