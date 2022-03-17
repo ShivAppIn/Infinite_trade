@@ -112,14 +112,12 @@ export class ChangePasswordComponent implements OnInit {
     /*------Match/Not-Match Pass---*/
     if (this.f.oldPassword.value == this.f.password.value) {
       this.f.password.setErrors({ 'match': true });
-      // this.pass.nativeElement.focus();
       this.hide = false;
       this.hide1 = false;
       return
     }
     if (this.f.confirmPassword.value != this.f.password.value) {
       this.f.confirmPassword.setErrors({ 'notMatch': true });
-      // this.cPass.nativeElement.focus();
       this.hide1 = false;
       this.hide2 = false;
       return

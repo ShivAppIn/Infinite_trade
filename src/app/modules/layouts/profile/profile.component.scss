@@ -36,13 +36,11 @@
     &:hover {
         color: $white;
         background-color: $textColor;
-    }
-
-    &:hover {
         .right-arrow {
             color: $white;
         }
     }
+
 
     .mat-icon {
         background-color: rgba($primary, 0.2);

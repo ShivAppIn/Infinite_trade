@@ -40,7 +40,7 @@ export class AddEditFaqComponent implements OnInit {
     this.faqForm = this._fb.group({
       question: [''],
       answer: ['', Validators.required],
-      position: [, [Validators.pattern(REGEX.AMOUNT)]],
+      position: ['', [Validators.pattern(REGEX.AMOUNT)]],
     })
   }
 
