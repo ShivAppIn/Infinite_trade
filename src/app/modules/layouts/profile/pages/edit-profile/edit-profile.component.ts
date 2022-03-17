@@ -68,28 +68,28 @@ export class EditProfileComponent implements OnInit {
 
   async profileHandler() {
     this.profileValidation();
-    if (this.profileForm.valid) {
-      if (this.profileForm.dirty) {
-        let formValue = this.profileForm.value;
-        formValue.email = this.storage.profileDetail.email;
-        formValue['profilePicture'] = '';
-        if (this.selectedFile.length > 0) {
-          for (let file = 0; file < this.selectedFile.length; file++) {
-            if (this.selectedFile[file] && this.selectedFile[file]['realFile']) {
-              await this.uploadImage(this.selectedFile[file]['realFile'], formValue);
-            } else {
-              formValue.profilePicture = this.selectedFile[file];
-            }
-          }
-        }
-        if (!formValue['profilePicture']) {
-          delete formValue['profilePicture'];
-        }
-        this.updateProfileInfo(formValue);
-      } else {
-        this.navigateToProfile();
-      }
-    }
+    // if (this.profileForm.valid) {
+    //   if (this.profileForm.dirty) {
+    //     let formValue = this.profileForm.value;
+    //     formValue.email = this.storage.profileDetail.email;
+    //     formValue['profilePicture'] = '';
+    //     if (this.selectedFile.length > 0) {
+    //       for (let file = 0; file < this.selectedFile.length; file++) {
+    //         if (this.selectedFile[file] && this.selectedFile[file]['realFile']) {
+    //           await this.uploadImage(this.selectedFile[file]['realFile'], formValue);
+    //         } else {
+    //           formValue.profilePicture = this.selectedFile[file];
+    //         }
+    //       }
+    //     }
+    //     if (!formValue['profilePicture']) {
+    //       delete formValue['profilePicture'];
+    //     }
+    //     this.updateProfileInfo(formValue);
+    //   } else {
+    //     this.navigateToProfile();
+    //   }
+    // }
   }
 
   uploadImage(selectedFile, formValue) {
