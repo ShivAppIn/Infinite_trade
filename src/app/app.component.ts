@@ -12,7 +12,6 @@ export class AppComponent implements OnInit {
   offlineEvent: Observable<Event>;
   subscriptions: Subscription[] = [];
 
-  constructor() { }
 
   ngOnInit() {
     this.chechStatus();
@@ -30,6 +29,7 @@ export class AppComponent implements OnInit {
       window.location.reload();
     }));
     this.subscriptions.push(this.offlineEvent.subscribe(e => {
+      // window offline status
     }));
   }
 
