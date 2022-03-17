@@ -8,8 +8,6 @@ export class TableService {
   private table = new Subject<any>();
   public tableObserve = this.table.asObservable();
 
-  constructor() { }
-
   tableRender(data: any) {
     setTimeout(() => {
       this.table.next(data);

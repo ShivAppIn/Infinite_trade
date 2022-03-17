@@ -21,6 +21,7 @@ export class UploadImgComponent implements OnInit {
   }
 
   ngOnInit() {
+    // might be needed in future
   }
 
   async fileChangeEvent(event: any) {

@@ -99,7 +99,7 @@ export class OemListingComponent extends Pagination implements OnInit,OnDestroy 
   }
 
   checkedUsers(checkedUser: any) {
-
+    // for delete listing
   }
 
   ngOnDestroy() {

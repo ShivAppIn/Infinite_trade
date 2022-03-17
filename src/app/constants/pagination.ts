@@ -55,7 +55,9 @@ export class Pagination {
     };
   }
 
-  confirmPageReload() { }
+  confirmPageReload() {
+    // might be needed in future
+   }
 
   allPrams() {
     return {

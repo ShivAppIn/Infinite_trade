@@ -12,7 +12,6 @@ export class TabsComponent implements OnInit {
   @Input() isIndividuallySubscribed = false;
   navLinks: any;
 
-  constructor() { }
 
   ngOnInit() {
     this.showTabs();

@@ -12,11 +12,9 @@ export class ItemBoxComponent implements OnInit {
   @Input() showDeleteOption = true;
   @Output() sendCurrentIndex = new EventEmitter();
 
-  constructor(
-
-  ) { }
-
+ 
   ngOnInit() {
+    // might be needed in future
   }
 
   emitCurrentIndex(index: number) {

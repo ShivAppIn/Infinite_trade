@@ -7,9 +7,9 @@ export class NumberDirective implements OnInit {
   @Input() isMobileNumber = false;
   @Input() isPercentage = false;
 
-  constructor() { }
-
-  ngOnInit() { }
+  ngOnInit() {
+    // might be needed in future
+  }
 
   @HostListener('keydown', ['$event'])
   onKeyDown(e: KeyboardEvent) {

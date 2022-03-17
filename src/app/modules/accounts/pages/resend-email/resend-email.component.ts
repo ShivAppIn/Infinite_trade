@@ -13,7 +13,9 @@ export class ResendEmailComponent implements OnInit {
 
   constructor(private _account:AccountService,private _toast:ToastService) { }
 
-  ngOnInit(): void {
+  
+  ngOnInit() {
+    // might be needed in future
   }
 
   resendLink(){

@@ -7,9 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddEditCompanyComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit() {
+    // might be needed in future
   }
 
 }

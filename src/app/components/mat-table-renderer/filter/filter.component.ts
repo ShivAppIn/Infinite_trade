@@ -9,11 +9,10 @@ import { Component, OnInit, Output, EventEmitter, ChangeDetectionStrategy } from
 
 export class FilterComponent implements OnInit {
   @Output() apply: EventEmitter<any> = new EventEmitter();
-  constructor() { }
-
+ 
   ngOnInit() {
+    // might be needed in future
   }
-
   applyForm(info: boolean) {
     const send = {
       apply: info

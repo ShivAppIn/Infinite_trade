@@ -7,9 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class DataLoaderComponent implements OnInit {
 
-  constructor() { }
-
+  
   ngOnInit() {
+    // might be needed in future
   }
-
 }

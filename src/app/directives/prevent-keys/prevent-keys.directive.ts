@@ -10,7 +10,6 @@ export class PreventKeysDirective {
   @Input('prevent-keys') preventKeys;
   @Input() isPasteAllowed = true;
 
-  constructor() { }
   onKeyUp($event) {
 
     if (!this.isPasteAllowed && $event.keyCode === 86 && $event.ctrlKey === true) {

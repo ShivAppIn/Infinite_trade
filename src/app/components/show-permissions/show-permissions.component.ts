@@ -11,9 +11,8 @@ export class ShowPermissionsComponent implements OnInit {
   @Input() permissions = [];
   manageTypeValue = MANAGE_TYPE_OF;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit() {
+    // might be needed in future
   }
 
 }

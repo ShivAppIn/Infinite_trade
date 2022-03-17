@@ -40,6 +40,7 @@ export class VerifyOtpService {
   reSendOtp(info, screenType?) {
     return this._http.post(FORGOT_PASSWORD_API, info).pipe(
       tap(res => {
+        // might be needed in future
       }),
       catchError(err => throwError(err))
     );

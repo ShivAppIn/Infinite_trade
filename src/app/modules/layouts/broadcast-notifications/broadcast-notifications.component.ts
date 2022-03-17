@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BroadcastNotificationsComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  
+  ngOnInit() {
+    // might be needed in future
   }
 
 }

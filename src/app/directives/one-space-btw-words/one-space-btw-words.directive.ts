@@ -5,8 +5,6 @@ import { Directive, HostListener } from '@angular/core';
 })
 export class OneSpaceBtwWordsDirective {
 
-  constructor() { }
-
   @HostListener('keypress', ['$event'])
   onKeyDown(e: any) {
     let input = e.target;

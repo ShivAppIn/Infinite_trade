@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BannersComponent implements OnInit {
 
-  constructor() { }
-
+  
   ngOnInit() {
+    // might be needed in future
   }
 
 }

@@ -17,7 +17,9 @@ export class FaqDetailsComponent implements OnInit {
     this._dialogRef._containerInstance._config.autoFocus = false;
   }
 
+  
   ngOnInit() {
+    // might be needed in future
   }
 
 }

@@ -21,7 +21,9 @@ export class SidebarComponent implements OnInit {
     private _account:AccountService
   ) { }
 
+  
   ngOnInit() {
+    // might be needed in future
   }
 
   logoutHandler() {

@@ -12,6 +12,7 @@ export class AlertPopupComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
+    // amight need in future
   }
 
   submit(info: boolean) {

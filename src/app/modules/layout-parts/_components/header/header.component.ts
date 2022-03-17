@@ -22,9 +22,10 @@ export class HeaderComponent implements OnInit {
     private renderer: Renderer2,
   ) { }
 
-  ngOnInit() {
-  }
 
+  ngOnInit() {
+    // might be needed in future
+  }
   sidebarCollaped() {
     if (this.flag === true) {
       this.renderer.addClass(document.body, "collapsed");

@@ -17,9 +17,9 @@ export class LazyImageComponent implements OnInit {
     this._img = value;
   }
 
-  constructor() { }
-
+ 
   ngOnInit() {
+    // might be needed in future
   }
 
 }

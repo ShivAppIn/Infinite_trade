@@ -9,9 +9,9 @@ export class CommonNotificationListComponent implements OnInit {
   @Input() isListInMenu = false;
   @Input() notificationData: any;
 
-  constructor() { }
 
   ngOnInit() {
+    // might be needed in future
   }
 
 }

@@ -153,21 +153,21 @@ export class CommonMatTableComponent extends Pagination implements OnInit {
   }
 
 
-  // setErrorMSg() {
-  //   switch (this.tableName) {
-  //     case 'company':
-  //       this.errMsg = TABLE_ERROR_MSG.COMPANY;
-  //       break;
-  //     case 'oem':
-  //       this.errMsg = TABLE_ERROR_MSG.OEM;
-  //       break;
-  //     case 'employee':
-  //       this.errMsg = TABLE_ERROR_MSG.EMPLOYEES;
-  //       break;
+  setErrorMSg() {
+    switch (this.tableName) {
+      case 'company':
+        this.errMsg = TABLE_ERROR_MSG.COMPANY;
+        break;
+      case 'oem':
+        this.errMsg = TABLE_ERROR_MSG.OEM;
+        break;
+      case 'employee':
+        this.errMsg = TABLE_ERROR_MSG.EMPLOYEES;
+        break;
 
-  //     default:
-  //       this.errMsg = '';
-  //       break;
-  //   }
-  // }
+      default:
+        this.errMsg = '';
+        break;
+    }
+  }
 }

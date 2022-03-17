@@ -14,7 +14,6 @@ export class ToastService {
     time: null
   }
 
-  constructor() { }
 
   success(message, title?, time?: number) {
     this.data = {

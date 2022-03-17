@@ -9,8 +9,6 @@ export class MatTableService {
   private table = new Subject<any>();
   public tableObs = this.table.asObservable();
 
-  constructor() { }
-
   tableRender(data:any,tableName,subTableName) {
     setTimeout(() => {
       let tableData = {

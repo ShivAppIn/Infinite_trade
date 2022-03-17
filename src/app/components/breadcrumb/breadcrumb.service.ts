@@ -5,8 +5,7 @@ import { Subject } from 'rxjs';
 export class BreadcrumbService {
 
   data = new Subject<any>();
-  constructor() {
-  }
+  
 
   setBreadcrumb(e) {
     this.data.next(e);
