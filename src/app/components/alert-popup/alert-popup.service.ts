@@ -10,7 +10,7 @@ export class AlertPopupService {
     private _dialog: MatDialog,
     private _router: Router) { }
 
-  popupBox(isDisableClose = false, iconUrl, title?: string, message?: string, redirect?: any, btn?: string, showCrossBtn = false, queryParamInfo = {}) {
+  popupBox( iconUrl, title?: string, message?: string, redirect?: any, btn?: string, showCrossBtn = false, queryParamInfo = {},isDisableClose = false) {
     const _dialog = this._dialog.open(AlertPopupComponent, {
       disableClose: isDisableClose,
       data: {

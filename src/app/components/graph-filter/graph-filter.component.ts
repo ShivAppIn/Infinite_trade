@@ -78,7 +78,6 @@ export class GraphFilterComponent implements OnInit {
         break;
 
       case this.durations[1].value:
-        // this.f.year.setValue(new Date().getFullYear());
         this.errorFreeMonth();
         break;
 
@@ -114,7 +113,6 @@ export class GraphFilterComponent implements OnInit {
 
   setCurrentMonthAndYear() {
     this.f.month.setValue(new Date().getMonth() + 1);
-    // this.f.year.setValue(new Date().getFullYear());
   }
 
   errorFreeMonth() {

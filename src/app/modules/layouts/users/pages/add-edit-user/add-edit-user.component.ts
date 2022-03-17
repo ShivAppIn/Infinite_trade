@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { checkSpaceAtStartEnd } from 'src/app/constants/helper';
 import { REGEX } from 'src/app/constants/validators';
+import { UsersService } from '../../_service/users.service';
 
 @Component({
   selector: 'app-add-edit-user',
@@ -17,7 +18,8 @@ export class AddEditUserComponent implements OnInit {
 
   constructor(
     private _dialogRef: MatDialogRef<AddEditUserComponent>,
-    private _fb: FormBuilder
+    private _fb: FormBuilder,
+    private _user:UsersService
   ) {}
 
   ngOnInit() {
@@ -50,14 +52,7 @@ export class AddEditUserComponent implements OnInit {
   }
 
   confirmAddUser() {
-    let formValue = this.addUserForm.value;
-    //  this._userManagement.addUser(formValue).subscribe(response => {
-    //  this._toast.success(response.message);
-    //  this._dialogRef.close();
-    //  }, (error) => {
-    //   this._toast.error(error.message);
-    // });
-    
+    // for future refrence
   }
 
   addUserValidation() {
