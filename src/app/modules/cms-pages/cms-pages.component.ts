@@ -7,10 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CmsPagesComponent implements OnInit {
 
-  constructor() { }
-
   ngOnInit() {
-
+    // might be needed in future
   }
 
 }

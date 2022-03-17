@@ -19,6 +19,7 @@ export class NotificationDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
+    //might be needed in future
   }
 
 }

@@ -50,6 +50,7 @@ export class S3BucketService {
           }
           this._loader.hide();
         }).on('httpUploadProgress', (progress) => {
+          //might be needed in future
         });
 
       });
