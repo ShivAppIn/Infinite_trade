@@ -1,0 +1,46 @@
+<app-data-loader *ngIf="isApiCallInProgress;else apiHit"></app-data-loader>
+<ng-template #apiHit>
+  <div class="page-banner-detail">
+    <div class="detail-ui">
+      <div class="row">
+        <div class="col-4">
+          <p class="label">Banner Title</p>
+          <p class="value">{{bannerDetails?.title |emptyValue}}</p>
+        </div>
+        <div class="col-4">
+          <p class="label">Banner Heading</p>
+          <p class="value">{{bannerDetails?.heading |emptyValue}}</p>
+        </div>
+        <div class="col-4">
+          <p class="label">Banner Used</p>
+          <p class="value">{{bannerDetails?.template |formatStatus}}</p>
+        </div>
+        <div class="col-4">
+          <p class="label">Status</p>
+          <p class="value">{{bannerDetails?.status | formatStatus}}</p>
+        </div>
+        <div class="col-4">
+          <p class="label">Created On</p>
+          <p class="value">{{bannerDetails?.createdAt |date:dateType?.DATE_WITH_TIME}}</p>
+        </div>
+      </div>
+      <div class="row mb-20 mt-10">
+        <div class="col-12">
+          <p class="label">Banner Images</p>
+          <div class="uploaded-photo-list">
+            <div class="single-uploaded-photo" *ngFor="let item of bannerDetails?.banner">
+              <app-item-box [data]="item" [showDeleteOption]="false">
+              </app-item-box>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p class="label">Banner Content</p>
+          <p class="banner-content-cover" [innerHTML]="bannerDetails?.content |emptyValue"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

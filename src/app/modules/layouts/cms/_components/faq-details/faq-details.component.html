@@ -1,0 +1,28 @@
+<div class="page-welcome-mssg-detail popup-ui">
+	<div class="popup-header">
+		<h4>FAQ Details</h4>
+		<span class="material-icons close-icon" mat-dialog-close>close</span>
+	</div>
+	<div class="popup-body detail-ui left">
+		<div class="faq_details_wrapper">
+			<div class="row">
+				<div class="col-6">
+					<p class="label">Question Display Order</p>
+					<p class="value">{{data?.position |emptyValue}}</p>
+				</div>
+				<div class="col-6">
+					<p class="label">Added On</p>
+					<p class="value">{{data?.created | date: dateType.DATE_WITH_TIME}}</p>
+				</div>
+				<div class="col-12">
+					<p class="label">Question</p>
+					<p class="value">{{data?.question | emptyValue}}</p>
+				</div>
+				<div class="col-12">
+					<p class="label">Answer</p>
+					<div class="value" [innerHTML]="data?.answer |emptyValue"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

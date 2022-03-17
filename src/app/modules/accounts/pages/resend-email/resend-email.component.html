@@ -1,0 +1,31 @@
+<!-- reset-password-link-send -->
+<!-- please add back button here also increase both button size please refer to figma-->
+<a class="back-btn" [routerLink]="['ABS_FORGOT_PASSWORD' | absolutePath]">
+  < Back</a>
+
+<div class="page-forgot">
+  <h3 class="head-text bold mb-10">Reset password link sent</h3>
+  <div class="reset-para mb-20 pb-10">
+    To create your new password, click the link in the email and enter a new
+    one.
+  </div>
+  <div class="reset-para mb-20 pb-10">
+    Didn't receive the email? Check your junk email, any other email addresses
+    linked to your Infinite Trades account, or click below to resend the email.
+  </div>
+  <form>
+    <div class="btn-cover">
+      <button type="submit" mat-stroked-button class="btn btn-black-outline" (click)="resendLink()">
+        Resend email
+      </button>
+      <button
+        type="submit"
+        mat-stroked-button
+        class="btn btn-primary butn butn__new"
+        [routerLink]="['ABS_ACCOUNT_LOGIN' | absolutePath]"
+        >
+        Login
+      </button>
+    </div>
+  </form>
+</div>

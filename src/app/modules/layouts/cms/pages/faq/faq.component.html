@@ -1,0 +1,4 @@
+<mat-table-renderer class="mat_table" notFound="FAQ's not added" cls="removeSearch removeFilter" [heading]="heading"
+  (add)="addEditFaq($event)" (detailInPopup)="showDetailInPopup($event)" (find)="paginationWithSearch($event,0)"
+  (page)="paginationWithSearch($event,1)" (status)="changeStatus($event)" (sort)="sortByListing($event)">
+</mat-table-renderer>

@@ -1,0 +1,22 @@
+<a class="back-btn" [routerLink]="['ABS_ACCOUNT_LOGIN' | absolutePath]">
+  < Back</a>
+    <div class="page-forgot">
+      <h3 class="head-text bold mb-10">Forgot Password</h3>
+      <div class="head-mini mb-20 pb-10">To reset your password, please enter your email address.</div>
+      <form [formGroup]="forgotForm" (ngSubmit)="forgotHandler()">
+
+        <mat-label class="mat-label">EMAIL ADDRESS</mat-label>
+        <mat-form-field appearance="outline">
+          <input #email matInput type="email" placeholder="Your Email Address" (blur)="trimValues()"
+            [prevent-keys]="[32]" [maxlength]="limit?.MAX_EMAIL_LENGTH" formControlName="email" autocomplete="off"
+            required />
+          <mat-error *ngIf="frmCtrl.email.hasError('required')">{{errorMsg?.EMAIL_REQ}}</mat-error>
+          <mat-error *ngIf="frmCtrl.email.hasError('pattern')">{{errorMsg?.INVALID_EMAIL}}</mat-error>
+        </mat-form-field>
+        <div class="btn-cover">
+          <button type="submit" mat-stroked-button class="btn btn-primary w-100 butn butn__new" [disabled]="forgotForm.invalid">Send</button>
+        </div>
+
+      </form>
+    </div>
+

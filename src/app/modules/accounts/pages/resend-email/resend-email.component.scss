@@ -1,0 +1,21 @@
+@import "../../../../../scss/var";
+.btn-cover {
+    button {
+        min-width: 170px;
+    }
+}
+.reset-para {
+    color: $secondary-dark;
+}
+.head-text {
+    font-size: 30px;
+}
+.back-btn {
+    color: $secondary;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    color: $main-head;
+}

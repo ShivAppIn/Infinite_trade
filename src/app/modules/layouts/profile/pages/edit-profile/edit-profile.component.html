@@ -1,0 +1,50 @@
+<form [formGroup]="profileForm" (ngSubmit)="profileHandler()">
+  <div class="page-edit-profile">
+    <div class="detail-ui">
+      <div class="row">
+        <div class="col-left">
+          <div class="document-upload-cover">
+            <ng-container *ngIf="selectedFile?.length<maxImageSelection">
+              <app-upload-img
+                [textInfo]="'Select profile picture(Optional), Max 2 MB size and supported JPEG, PNG, JPG only'"
+                [isMultiSelection]="false" (sendFiles)="getSelectedFile($event)"></app-upload-img>
+            </ng-container>
+            <div class="uploaded-photo-list" *ngIf="selectedFile?.length>0">
+              <div class="single-uploaded-photo" *ngFor="let item of selectedFile;let i=index;">
+                <app-item-box [data]="item?.base64Url ? item?.base64Url : item" [currentIndex]="i"
+                  (sendCurrentIndex)="getCurrentIndex($event)">
+                </app-item-box>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-right">
+          <div class="row">
+            <div class="col-12">
+              <mat-form-field appearance="outline" class="custom-padding">
+                <mat-label>Name</mat-label>
+                <input autocomplete="off" matInput placeholder="Enter Full Name" [maxlength]="limit?.MAX_NAME_LENGTH"
+                  formControlName="name" required />
+                <mat-error class="error-message" *ngIf="frmCtrl.name.hasError('required')">{{errorMsg?.NAME_REQ}}
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12" [ngClass]="{_disabled: true}">
+              <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input autocomplete="off" matInput placeholder="Enter Email" formControlName="email" required
+                  readonly />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="btn-cover">
+            <button class="btn btn-simple" mat-stroked-button type="button" (click)="navigateToProfile()"> Cancel </button>
+            <button class="btn btn-primary" mat-stroked-button type="submit">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

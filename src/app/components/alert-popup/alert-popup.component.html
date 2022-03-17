@@ -1,0 +1,21 @@
+<mat-dialog-content class="custom_modal">
+  <ng-container *ngIf="data?.showCrossBtn">
+    <button mat-mini-fab color="primary" (click)="submit(false)" class="close">
+      <mat-icon>clear</mat-icon>
+    </button>
+  </ng-container>
+  <div class="mssg_container">
+    <figure class="alert_img">
+      <img [src]="data?.iconUrl" alt="alert-warning" />
+    </figure>
+    <h1 mat-dialog-title *ngIf="data?.title" class="theme-text">{{data?.title}}</h1>
+    <div class="modal_message">
+      <p>{{data?.message}} </p>
+    </div>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-raised-button color="primary" class="modal-btn" type="submit"
+    (click)="submit(data.btn ? true : false)">{{data.btn?data.btn:'OK'}}</button>
+</mat-dialog-actions>

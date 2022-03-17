@@ -1,0 +1,36 @@
+<form [formGroup]="schedulerForm" (ngSubmit)="schedulerFormHandler()">
+  <div class="page-scheduler-popup popup-ui">
+    <div class="popup-header">
+      <h4>Schedule Time</h4>
+      <span class="material-icons close-icon" mat-dialog-close (click)="close()">close</span>
+    </div>
+    <div class="popup-body">
+
+      <mat-label>Date</mat-label>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Select Date" [matDatepicker]="picker" (click)="picker.open()"
+          formControlName="date" [min]="today" required readonly>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error>{{errMsg?.DATE_REQ}}</mat-error>
+      </mat-form-field>
+
+      <div class="select-time-cover">
+        <mat-label>Time</mat-label>
+        <input [ngxTimepicker]="picker1" placeholder="Select Time" formControlName="time" readonly required>
+        <ngx-material-timepicker #picker1></ngx-material-timepicker>
+        <mat-icon matSuffix>schedule</mat-icon>
+        <mat-error *ngIf="f['time'].touched && !f['time'].value" class="mat-error">{{errMsg?.TIME_REQ}}</mat-error>
+      </div>
+
+    </div>
+    <div class="popup-footer">
+      <div class="btn-cover">
+        <button type="button" mat-stroked-button mat-dialog-close class="btn btn-simple" (click)="close()">
+          Cancel</button>
+        <button type="submit" mat-stroked-button class="btn btn-primary"> Schedule
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

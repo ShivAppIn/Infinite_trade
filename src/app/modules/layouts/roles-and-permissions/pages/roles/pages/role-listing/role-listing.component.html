@@ -1,0 +1,28 @@
+<mat-table-renderer placeholder="Search by Role" [heading]="heading" (add)="addRoles($event)"
+  (find)="paginationWithSearch($event,0)" (page)="paginationWithSearch($event,1)" (status)="changeStatus($event)"
+  (sort)="sortByListing($event)" (filter)="filterApply($event)">
+  <div role="filter">
+    <form [formGroup]="filterForm" class="filterForm">
+      <mat-label>Added From</mat-label>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Added From" [matDatepicker]="picker" (click)="picker.open()"
+          formControlName="fromDate" [max]="today" readonly (dateChange)="selectFromDate($event)">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-label>Added To</mat-label>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Added To" [matDatepicker]="picker2" (click)="picker2.open()"
+          formControlName="toDate" [max]="today" [min]="f.fromDate.value" readonly>
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+      <mat-label>Status</mat-label>
+      <mat-form-field class="search_filter" appearance="outline">
+        <mat-select placeholder="Select Status" formControlName="status">
+          <mat-option *ngFor="let sta of status" [value]="sta.value">{{sta.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </div>
+</mat-table-renderer>

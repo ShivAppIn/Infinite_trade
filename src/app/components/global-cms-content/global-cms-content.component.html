@@ -1,0 +1,39 @@
+<div class="page-global-cms">
+  <app-data-loader *ngIf="isApiCallInProgress;else apiHit"></app-data-loader>
+  <ng-template #apiHit>
+    <ng-container *ngIf="data || data?.length>0;else noData">
+      <ng-container *ngIf="isForHelp;else otherSection">
+        <mat-accordion>
+          <ng-container *ngFor="let faq of data;let quesIndex = index;">
+            <mat-expansion-panel (expandedChange)="isQuestionExpanded($event,quesIndex)">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <span class="custom-margin" [ngClass]="{'showLessWidthDotDot': !faq?.isCssClassAdded}"
+                    [innerHTML]="faq?.question| safe:'html'"></span>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="expansion_content">
+                <p [innerHTML]="faq?.answer | safe:'html'">
+                </p>
+              </div>
+            </mat-expansion-panel>
+          </ng-container>
+        </mat-accordion>
+      </ng-container>
+      <ng-template #otherSection>
+        <div class="global-cms-content">
+          <h1 class="bold mb-20 center">{{title}}</h1>
+          <p [innerHTML]="data | safe:'html'">
+          </p>
+        </div>
+      </ng-template>
+    </ng-container>
+    <ng-template #noData>
+      <div class="global-cms-content">
+        <h1 class="bold mb-30 center">{{title}}</h1>
+        <app-result-not-found>
+        </app-result-not-found>
+      </div>
+    </ng-template>
+  </ng-template>
+</div>

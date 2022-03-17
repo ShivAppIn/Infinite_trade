@@ -1,0 +1,44 @@
+<form #form="ngForm" [formGroup]="filterForm" (ngSubmit)="filterGraph()">
+  <div class="dash_filter">
+    <div class="row">
+      <div class="col-4">
+        <mat-label>Duration</mat-label>
+        <mat-form-field appearance="outline" class="m0">
+          <mat-select formControlName="type" (selectionChange)="setYearAndMonth($event)">
+            <mat-option *ngFor="let duration of durations" [value]="duration?.value">{{duration?.name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-4">
+        <mat-label>Year</mat-label>
+        <mat-form-field appearance="outline" class="m0">
+          <mat-select formControlName="year" (selectionChange)="removeSelectedCurrentMonth($event)" required>
+            <mat-option *ngFor="let year of years" [value]="year">{{year}}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="f['year'].hasError('required')">
+            {{_error?.SELECT_YEAR}}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-4">
+        <ng-container *ngIf="f['type'].value != 'MONTHLY'">
+          <mat-label>Month</mat-label>
+          <mat-form-field appearance="outline" class="m0">
+            <mat-select formControlName="month" required>
+              <mat-option *ngFor="let month of months" [value]="month?.value">{{month?.name}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="f['month'].hasError('required')">
+              {{_error?.SELECT_MONTH}}
+            </mat-error>
+          </mat-form-field>
+        </ng-container>
+      </div>
+      <div class="col-12">
+        <div class="form-btn">
+          <button type="submit" mat-raised-button color="primary" title="Apply Filter">Apply</button>
+          <button type="button" mat-stroked-button color="default" title="Reset" (click)="resetfilterGraph()">Reset </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

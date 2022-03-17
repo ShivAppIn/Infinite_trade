@@ -1,0 +1,152 @@
+<table class="main-table"
+  style="width: 100%"
+  mat-table
+  [dataSource]="dataSource"
+  matSort
+  matSortStart="desc"
+  matSortDisableClear
+  (matSortChange)="sortingData($event)"
+>
+  <ng-container *ngFor="let row of heading" [matColumnDef]="row.heading">
+    <ng-container *ngIf="row.heading === 'select'">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox color="primary"
+          (change)="$event ? selectAll() : null"
+          [checked]="selection.hasValue() && isAllSelected()"
+          [indeterminate]="selection.hasValue() && !isAllSelected()"
+        >
+        </mat-checkbox>
+      </th>
+    </ng-container>
+    <ng-container *ngIf="row.heading !== 'select'">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        [disabled]="!row.sort"
+        class="table-header"
+        [ngClass]="{
+          noshort: !row.sort,
+          'table-action': row.type == 'action',
+          'table-center': row.align == 'center',
+          'table-content': row.content == true,
+          'table-faq': row.faqContent == true
+        }"
+      >
+        {{ row.heading }}
+      </th>
+    </ng-container>
+
+    <td
+      mat-cell
+      *matCellDef="let element; let i = index"
+      [ngClass]="{
+        'table-action': row.type == 'action',
+        'table-center': row.align == 'center',
+        'table-content': row.content == true,
+        'table-faq': row.faqContent == true
+      }"
+    >
+      <div>
+        <ng-container [ngSwitch]="row.key">
+          <ng-container *ngSwitchCase="'check'">
+            <mat-checkbox color="primary"
+              (click)="$event.stopPropagation()"
+              (change)="$event ? selectSingleValue(element) : null"
+              [checked]="selection.isSelected(element)"
+            >
+            </mat-checkbox>
+          </ng-container>
+
+          <ng-container *ngSwitchCase="'companyDetail.businessName'">
+            <span>{{ element?.companyDetail?.businessName ? element?.companyDetail?.businessName
+              : '-'}}</span>
+          </ng-container>
+
+          <ng-container *ngSwitchCase="'companyDetail.officeNo'">
+            <span>{{ element?.companyDetail?.officeNo ? element.companyDetail.officeNo
+              : '-'}}</span>
+          </ng-container>
+
+          <ng-container *ngSwitchCase="'location.address'">
+            <span>{{ element?.location?.address ? element?.location?.address
+              : '-'}}</span>
+          </ng-container>
+
+
+          <ng-container *ngSwitchCase="'actionOem'">
+            <div>
+              <span title="Edit" (click)="navigateToEditOem(element._id)">
+                <span>Edit</span>
+              </span>
+            </div>
+          </ng-container>
+          <ng-container *ngSwitchCase="'actionEmployee'">
+            <div>
+              <span title="Edit" (click)="navigateToEditEmployee(element._id)">
+                <span>Edit</span>
+              </span>
+            </div>
+          </ng-container>
+          <ng-container *ngSwitchCase="'actionCompany'">
+            <div>
+              <span title="Edit" (click)="navigateToEditCompany(element._id)">
+                <span>Edit</span>
+              </span>
+            </div>
+          </ng-container>
+          <ng-container *ngSwitchDefault>
+            <ng-container *ngIf="row.type == 'date'; else time">
+              {{
+                element[row.key] ? (element[row.key] | date: "dd/MM/yyyy") : "-"
+              }}
+            </ng-container>
+            <ng-template #time>
+              <ng-container *ngIf="row.type == 'time'; else amount">
+                {{
+                  element[row.key]
+                    ? (element[row.key] | date: dateType.SHORT_TIME)
+                    : "-"
+                }}
+              </ng-container>
+              <ng-template #amount>
+                <ng-container *ngIf="row.type == 'amount'; else normalKeys">
+                  <span
+                    ><label *ngIf="element[row.key]">$</label>
+                    {{ element[row.key] ? element[row.key] : "-" }}</span
+                  >
+                </ng-container>
+              </ng-template>
+              <ng-template #normalKeys>
+                {{
+                  element[row.key]
+                    ? element[row.key]
+                    : element[row.key] === 0
+                    ? 0
+                    : "-"
+                }}
+              </ng-template>
+            </ng-template>
+          </ng-container>
+        </ng-container>
+      </div>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="matHeaderRow"></tr>
+  <tr mat-row *matRowDef="let row; columns: matHeaderRow"></tr>
+</table>
+
+<div class="no_record" *ngIf="notfound">
+  <!-- <span>{{errMsg}}</span> -->
+  <span>No User Found!</span>
+</div>
+
+<mat-paginator
+  *ngIf="length"
+  [length]="length"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="pageOptions"
+  (page)="pageChange($event)"
+  showFirstLastButtons
+></mat-paginator>

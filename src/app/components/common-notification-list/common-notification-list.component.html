@@ -1,0 +1,9 @@
+<div class="notify-inner" [ngClass]="{'class_for_list': !isListInMenu,unread: !notificationData?.isRead}">
+  <p [ngClass]="{'main-notify-content': !isListInMenu}" title="{{notificationData?.message |emptyValue}}">
+    {{notificationData?.message |emptyValue}}
+  </p>
+  <span class="date_time" [ngClass]="{'forMenuMargin': isListInMenu,'forListMargin': !isListInMenu}">
+    {{notificationData?.created ? (notificationData?.created | timeago) : '-'}}
+  </span>
+
+</div>

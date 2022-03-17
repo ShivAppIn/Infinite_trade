@@ -1,0 +1,35 @@
+@import "../../../../../../scss/detail-ui";
+@import "../../../../../../scss/var";
+@import "../../../../../../scss/mix";
+
+.page-edit-profile {
+    .col-left {
+        width: auto;
+        padding: 0 10px;
+    }
+
+    .col-right {
+        width: calc(100% - 150px);
+        max-width: 600px;
+        padding: 0 10px;
+        margin-top: -14px;
+        max-width: 400px;
+    }
+}
+
+.document-upload-cover {
+    @include fpos(flex-end, flex-start);
+
+    .uploaded-photo-list {
+        @include fpos(center, center);
+
+        .single-uploaded-photo {
+            width: 120px;
+            height: 120px;
+            margin: 0 0 20px 0;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.2);
+        }
+    }
+}

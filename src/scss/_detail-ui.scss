@@ -1,0 +1,38 @@
+@import '../scss/var';
+@import '../scss/mix';
+@import '../scss/grid';
+
+.detail-ui {
+    .row {
+        p {
+            &.label {
+                font-size: 13px;
+                font-weight: 700;
+                margin-bottom: 5px;
+
+                @media screen and (max-width: 576px) {
+                    font-size: 10px;
+                }
+            }
+        }
+
+        .value {
+            font-size: 14px;
+            margin-bottom: 20px;
+            margin-top: 5px;
+            color: $darkGray;
+            line-height: 20px;
+
+            @media screen and (max-width: 576px) {
+                font-size: 10px;
+                margin-bottom: 10px;
+                margin-top: 2px;
+                line-height: 15px;
+            }
+
+            p {
+                color: $darkGray !important;
+            }
+        }
+    }
+}

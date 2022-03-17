@@ -1,0 +1,17 @@
+<div class="page-editor">
+  <app-data-loader *ngIf="isApiCallInProgress;else apiHit"></app-data-loader>
+
+  <ng-template #apiHit>
+    <form [formGroup]="cmsForm" (ngSubmit)="updateContentHandler()">
+      <quill-editor formControlName="data"></quill-editor>
+      <div id="ql-editor1" hidden [innerHTML]="f.data.value | safe:'html'"></div>
+      <ng-container *ngIf="showBtn">
+        <div class="btn-cover">
+          <button class="btn btn-primary" type="submit" mat-stroked-button
+            [ngClass]="{'_disabled': !cmsForm?.dirty}">{{contentData?'Update':'Add'}}</button>
+        </div>
+      </ng-container>
+    </form>
+  </ng-template>
+
+</div>

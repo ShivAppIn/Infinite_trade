@@ -1,0 +1,53 @@
+<div class="permission_table">
+  <table>
+    <thead>
+      <tr>
+        <th>Features</th>
+        <th colspan="6">Permissions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let permission of permissions">
+        <td>
+          <div class="name">{{ permission?.module}}</div>
+        </td>
+        <td class="permison-content">
+          <mat-icon [ngClass]="{'done':permission?.all,'reject':!permission?.all}">
+            {{permission?.all ? 'check_circle' : 'cancel'}}
+          </mat-icon>
+          <span>All</span>
+        </td>
+        <td class="permison-content">
+          <mat-icon [ngClass]="{'done':permission?.view,'reject':!permission?.view}">
+            {{permission?.view ? 'check_circle' : 'cancel'}}
+          </mat-icon>
+          <span>View List/Details</span>
+        </td>
+        <td class="permison-content">
+          <mat-icon [ngClass]="{'done':permission?.add,'reject':!permission?.add}">
+            {{permission?.add ? 'check_circle' : 'cancel'}}
+          </mat-icon>
+          <span>Add</span>
+        </td>
+        <td class="permison-content">
+          <mat-icon [ngClass]="{'done':permission?.edit,'reject':!permission?.edit}">
+            {{permission?.edit ? 'check_circle' : 'cancel'}}
+          </mat-icon>
+          <span>Edit</span>
+        </td>
+        <td class="permison-content">
+          <mat-icon [ngClass]="{'done':permission?.delete,'reject':!permission?.delete}">
+            {{permission?.delete ? 'check_circle' : 'cancel'}}
+          </mat-icon>
+          <span>Delete</span>
+        </td>
+        <td class="permison-content">
+          <mat-icon [ngClass]="{'done':permission?.activeInactive,'reject':!permission?.activeInactive}">
+            {{permission?.activeInactive ? 'check_circle' : 'cancel'}}
+          </mat-icon>
+          <span>Active/Inactive</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

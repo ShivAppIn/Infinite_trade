@@ -1,0 +1,43 @@
+@import "../../../scss/var";
+
+.mat-form-field {
+    font-size: 15px;
+
+    &.search_filter {
+        min-width: 230px;
+        max-width: 100%;
+        .mat-form-field-suffix {
+            .mat-icon {
+                color: $textColor !important;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            min-width: auto;
+        }
+    }
+}
+
+.search-btn {
+    min-width: 37px;
+}
+
+:host ::ng-deep {
+    
+    .mat-form-field-infix {
+        padding: 12px 0 10px 0;
+    }
+
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+            top: 11px !important;
+        }
+        .mat-form-field-infix .mat-input-element {
+            top: 0px !important;
+        }
+
+    .mat-form-field-suffix {
+        top: 5px !important;
+        right: -3px;
+        cursor: pointer;
+    }
+}

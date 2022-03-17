@@ -1,0 +1,46 @@
+@import "../../../../../../scss/popup-ui";
+@import "../../../../../../scss/var";
+
+mat-label {
+    display: block;
+    margin-bottom: -13px;
+    font-weight: 600;
+}
+
+.select-time-cover {
+    position: relative;
+    height: 70px;
+
+    mat-label {
+        margin-bottom: 2px;
+    }
+
+    mat-icon {
+        position: absolute;
+        top: 31px;
+        right: 16px;
+        pointer-events: none;
+        color: $boulder;
+    }
+
+    input {
+        padding: 12px 10px;
+        border: 1px solid $input-border;
+        border-radius: 5px;
+        width: 100%;
+        font-size: 16px;
+        cursor: pointer;
+
+        &::placeholder {
+            color: $darkGray;
+        }
+    }
+}
+
+:host ::ng-deep {
+    .popup-body {
+        padding: 10px 20px !important;
+        text-align: left !important;
+        overflow: auto !important;
+    }
+}

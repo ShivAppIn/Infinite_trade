@@ -1,0 +1,25 @@
+@import "../../../../../../scss/popup-ui";
+
+:host ::ng-deep {
+    .popup-body {
+        padding: 10px 20px !important;
+    }
+}
+
+:host ::ng-deep {
+    .ql-snow .ql-tooltip {
+        left: auto !important;
+        top: 0 !important;
+        right: 10%;
+    }
+}
+
+:host ::ng-deep {
+    .ql-image {
+        display: none !important;
+    }
+
+    .ql-video {
+        display: none !important;
+    }
+}

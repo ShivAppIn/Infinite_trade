@@ -1,0 +1,46 @@
+<div class="page-header">
+  <div class="left-portion">
+    <span mat-stroked-button class="material-icons hamburger-icon" (click)="sidebarCollaped()">menu</span>
+    <span *ngIf="flag === true" mat-stroked-button class="material-icons close-icon"
+      (click)="sidebarCollaped()">close</span>
+    <div [routerLink]="['ABS_DASHBOARD' | absolutePath ]" class="logo-cover">
+      <img src="../../../../../assets/images/logo.svg" alt="Logo">
+    </div>
+
+    <section class="search-box">
+     <input type="text" placeholder="Global search">
+     <img src="../../../../../assets/images/search.svg">
+    </section>
+  </div>
+
+  <div class="notification pointer">
+    <img src="../../../../../assets/images/notification.svg">
+  </div>
+  <!-- <div class="btn-group">
+    <div class="profile-name">
+      <div class="profile-img">
+        <app-lazy-image class="imgWrapper"
+          [img]="storage?.profileDetail?.profilePicture ? storage?.profileDetail?.profilePicture : 'assets/images/user_placeholder.jpg'">
+        </app-lazy-image>
+      </div>
+      <ng-container *ngIf="storage?.profileDetail?.name">
+        <span class="profileName">{{storage?.profileDetail?.name | titlecase}}</span>
+      </ng-container>
+    </div>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>expand_more</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [routerLink]="[ 'ABS_PROFILE' | absolutePath ]">
+        <span>Profile</span>
+      </button>
+      <button mat-menu-item [routerLink]="['ABS_PROFILE_CHANGE_PASS' | absolutePath]">
+        <span>Change Password</span>
+      </button>
+      <button mat-menu-item (click)="logoutHandler()">
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+
+  </div> -->
+</div>

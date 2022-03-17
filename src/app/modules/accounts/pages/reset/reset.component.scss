@@ -1,0 +1,19 @@
+@import '../../../../../scss/mix';
+
+:host {
+    @import '../../accounts.component.scss';
+}
+
+:host ::ng-deep {
+    .password {
+        .mat-form-field-flex {
+            .mat-form-field-suffix {
+                @include falign(flex-start);
+
+                .page-invalid-password-hint {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}

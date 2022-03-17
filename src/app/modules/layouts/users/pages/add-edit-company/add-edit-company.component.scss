@@ -1,0 +1,11 @@
+@import "../../../../../../scss/popup-ui";
+.expand-popup{
+    width: 650px;
+}
+.popup-form{
+    @include fpos(center,space-between);
+    flex-wrap: wrap;
+    .inner-form{
+        flex: 0 0 48%;
+    }
+}

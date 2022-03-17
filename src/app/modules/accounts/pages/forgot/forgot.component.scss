@@ -1,0 +1,49 @@
+@import '../../../../../scss/mix';
+@import '../../../../../scss/var';
+:host {
+    @import "../../accounts.component.scss";
+}
+
+.btn-cover {
+    .btn {
+        min-width: 140px;
+        // margin: 10px 0px;
+    }
+}
+.back-btn{
+    color: $secondary;
+    position: absolute;
+    top:25px;
+    left:25px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.head-text{
+    font-size: 30px;
+    color:$main-head;
+}
+.head-mini{
+    font-size: 16px;
+    color: $secondary;
+    border-bottom: 1px solid $secondary-light;
+    padding-bottom: 10px;
+}
+.reset-para{
+    font-size: 14px;
+    font-weight: 300;
+    color: $secondary;
+    padding-bottom: 10px;
+}
+:host ::ng-deep {
+    .password {
+        .mat-form-field-flex {
+            .mat-form-field-suffix {
+                @include falign(flex-start);
+
+                .page-invalid-password-hint {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}
