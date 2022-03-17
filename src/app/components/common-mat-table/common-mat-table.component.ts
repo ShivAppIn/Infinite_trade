@@ -98,7 +98,7 @@ export class CommonMatTableComponent extends Pagination implements OnInit {
         if (respData) {
           this.dataSource = new MatTableDataSource(respData?.data);
           this.notfound = respData.data?.length == 0 ? true : false;
-          //this.setErrorMSg();
+          this.setErrorMSg();
           this.length = response?.data?.data?.length;
           this.pageSize = response?.data?.limit;
         }
