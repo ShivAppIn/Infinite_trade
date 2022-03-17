@@ -116,30 +116,30 @@ export class AddEditBannersComponent implements OnInit {
 
   async bannerHandler() {
     this.checkValidation();
-    if (this.bannerForm.valid) {
+    // if (this.bannerForm.valid) {
 
-      if (this.selectedBannerFiles.length <= 0) {
-        this._toast.error(BANNER_ERROR_MESSAGES.IMG_REQ);
-        return
-      }
+    //   if (this.selectedBannerFiles.length <= 0) {
+    //     this._toast.error(BANNER_ERROR_MESSAGES.IMG_REQ);
+    //     return
+    //   }
 
-      let formValue = this.bannerForm.value;
-      formValue['banner'] = [];
-      if (this.selectedBannerFiles.length > 0) {
-        for (let file = 0; file < this.selectedBannerFiles.length; file++) {
-          if (this.selectedBannerFiles[file] && this.selectedBannerFiles[file]['realFile']) {
-            await this.uploadImage(this.selectedBannerFiles[file]['realFile'], formValue);
-          } else {
-            formValue.banner.push(this.selectedBannerFiles[file]);
-          }
-        }
-      }
-      if (this.bannerId) {
-        this.updateBanner(formValue);
-      } else {
-        this.addNewBanner(formValue);
-      }
-    }
+    //   let formValue = this.bannerForm.value;
+    //   formValue['banner'] = [];
+    //   if (this.selectedBannerFiles.length > 0) {
+    //     for (let file = 0; file < this.selectedBannerFiles.length; file++) {
+    //       if (this.selectedBannerFiles[file] && this.selectedBannerFiles[file]['realFile']) {
+    //         await this.uploadImage(this.selectedBannerFiles[file]['realFile'], formValue);
+    //       } else {
+    //         formValue.banner.push(this.selectedBannerFiles[file]);
+    //       }
+    //     }
+    //   }
+    //   if (this.bannerId) {
+    //     this.updateBanner(formValue);
+    //   } else {
+    //     this.addNewBanner(formValue);
+    //   }
+    // }
   }
 
   uploadImage(selectedFile, formValue) {
