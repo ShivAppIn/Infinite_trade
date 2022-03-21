@@ -68,6 +68,8 @@ export class CompanyListingComponent extends Pagination implements OnInit,OnDest
 
   getUserList() {
     if (this.searchValue.length) {
+      this.resetPages();
+      this.tableRef.paginator?.firstPage();
       this.queryObj = {
         ...this.validPageOptions,
         ...{searchKey:this.searchValue},

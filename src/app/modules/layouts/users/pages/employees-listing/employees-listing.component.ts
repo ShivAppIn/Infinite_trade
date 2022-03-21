@@ -22,9 +22,9 @@ export class EmployeesListingComponent extends Pagination implements OnInit,OnDe
   heading = [
     { heading: 'NAME', key: 'name'},
     { heading: 'EMAIL', key: 'email' },
-    { heading: 'CONTACT', key: 'companyDetail.officeNo' },
+    { heading: 'NUMBER', key: 'companyDetail.officeNo' },
     { heading: 'COMPANY', key: 'companyDetail.businessName'},
-    { heading: 'TRADE', key: 'trade'},
+    { heading: 'TRADE', key: 'companyDetail.availableTrades'},
     { heading: 'DATE JOINED', key: 'createdAt', align: 'center' , type: "date"},
     { heading: 'ACTIONS', key: 'actionEmployee', align: 'center' , type: 'action', action: [2]}
   ];
@@ -69,6 +69,8 @@ export class EmployeesListingComponent extends Pagination implements OnInit,OnDe
 
   getUserList() {
     if (this.searchValue.length) {
+      this.resetPages();
+      this.tableRef.paginator?.firstPage();
       this.queryObj = {
         ...this.validPageOptions,
         ...{searchKey:this.searchValue},

@@ -59,13 +59,18 @@
           </ng-container>
 
           <ng-container *ngSwitchCase="'companyDetail.businessName'">
-            <span>{{ element?.companyDetail?.businessName ? element?.companyDetail?.businessName
+            <span>{{ element?.companyDetail?.businessName ? element?.companyDetail?.businessName : element?.companySoleTraderDetail?.businessName ? element?.companySoleTraderDetail?.businessName
               : '-'}}</span>
           </ng-container>
 
           <ng-container *ngSwitchCase="'companyDetail.officeNo'">
             <span>{{ element?.companyDetail?.officeNo ? element.companyDetail.officeNo
               : '-'}}</span>
+          </ng-container>
+
+          <ng-container *ngSwitchCase="'companyDetail.availableTrades'">
+            <span>{{ element?.companyDetail?.availableTrades ? (element.companyDetail.availableTrades | arrayToString:', ')
+              : element?.companySoleTraderDetail?.skills ? element?.companySoleTraderDetail?.skills : '-'}}</span>
           </ng-container>
 
           <ng-container *ngSwitchCase="'location.address'">
@@ -142,6 +147,7 @@
 </div>
 
 <mat-paginator
+  #paginator
   *ngIf="length"
   [length]="length"
   [pageSize]="pageSize"

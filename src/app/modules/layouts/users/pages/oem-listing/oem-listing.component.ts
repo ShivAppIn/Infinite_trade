@@ -70,11 +70,14 @@ export class OemListingComponent extends Pagination implements OnInit,OnDestroy 
 
   getUserList() {
     if (this.searchValue.length) {
+      this.resetPages();
+      this.tableRef.paginator?.firstPage();
       this.queryObj = {
         ...this.validPageOptions,
         ...{searchKey:this.searchValue},
         userType: 'CLIENT'
       }
+      
     } else {
       this.queryObj = {
         ...this.validPageOptions,

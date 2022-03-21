@@ -14,6 +14,7 @@ import { MatSortModule } from '@angular/material/sort';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ArrayToStringModule } from 'src/app/pipes/array-to-string/array-to-string.module';
 
 @NgModule({
   declarations: [CommonMatTableComponent],
@@ -31,7 +32,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatPaginatorModule,
     MatCheckboxModule,
     MatButtonModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    ArrayToStringModule
   ],
   exports: [
     CommonMatTableComponent,
