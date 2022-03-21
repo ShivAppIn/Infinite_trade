@@ -28,19 +28,14 @@
     }
 }
 
-.forget-wrapper {
-    position: relative;
-
-    .actions {
-        position: absolute;
-        right: 0;
-        bottom: 75px;
-    }
+.flex-label {
+    @include fpos(center, space-between);
 }
 
 .actions {
     @include fpos(center, flex-end);
-
+    position: relative;
+    top: 6px;
     .forget-btn {
         font-weight: 600;
         font-size: 13px;
@@ -60,5 +55,8 @@
             min-width: 100%;
             height: 48px;
         }
+    }
+    .m-10 {
+        margin: 10px -10px 0px !important;
     }
 }
