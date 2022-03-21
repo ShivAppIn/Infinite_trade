@@ -12,11 +12,10 @@
         @include fpos(center, flex-start);
         .popup-inner-header {
             max-width: 432px;
-            padding-left: 88px;
         }
         .close-icon {
             position: absolute;
-            right: 34px;
+            right: 18px;
             top: 50%;
             transform: translateY(-50%);
             z-index: 9;
@@ -66,9 +65,7 @@
         }
         .single-btn {
             text-align: left;
-            max-width: 432px;
-            width: 100%;
-            margin: 0px auto 20px;
+            margin: 0px 20px 20px;
             button {
                 width: 100%;
             }

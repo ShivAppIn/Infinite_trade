@@ -25,32 +25,34 @@
 // }
 
 :host ::ng-deep {
-    .mat-ink-bar {
-        background-color: $primary !important;
-    }
-    .mat-tab-link {
-        opacity: 1 !important;
-        color: rgba(0, 0, 0, 0.87);
-        margin-right: 15px;
-        font-size: 14px !important;
-        font-weight: 600 !important;
-        background-color: #f2f2f2;
-    }
+    .tabbing_chat {
+        .mat-ink-bar {
+            background-color: $primary !important;
+        }
+        .mat-tab-link {
+            opacity: 1 !important;
+            color: rgba(0, 0, 0, 0.87);
+            margin-right: 15px;
+            font-size: 14px !important;
+            font-weight: 600 !important;
+            background-color: #f2f2f2;
+        }
 
-    .mat-tab-label {
-        border: 1px solid transparent !important;
-        border-top-left-radius: 0.25rem !important;
-        border-top-right-radius: 0.25rem !important;
-    }
+        .mat-tab-label {
+            border: 1px solid transparent !important;
+            border-top-left-radius: 0.25rem !important;
+            border-top-right-radius: 0.25rem !important;
+        }
 
-    .mat-tab-label-active {
-        color: #495057 !important;
-        background-color: #fff !important;
-        border-color: #dee2e6 #dee2e6 #fff !important;
-        border: 2px solid black;
-    }
+        .mat-tab-label-active {
+            color: #495057 !important;
+            background-color: #fff !important;
+            border-color: #dee2e6 #dee2e6 #fff !important;
+            border: 2px solid black;
+        }
 
-    .mat-ink-bar {
-        display: none !important;
+        .mat-ink-bar {
+            display: none !important;
+        }
     }
 }
