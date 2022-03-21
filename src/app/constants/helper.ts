@@ -1,7 +1,5 @@
-import { REGEX } from "./validators";
-
 export const checkSpaceAtStartEnd = (value: string) => {
-  if (REGEX.CHECK_SPACE.test(value)) {
+  if (/^\s+|\s+$/g.test(value)) {
     return true;
   } else {
     return false;
