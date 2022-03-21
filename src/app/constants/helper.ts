@@ -1,6 +1,6 @@
 export const checkSpaceAtStartEnd = (value: string) => {
-  let c = "/^\s+|\s+$/g";
-  let d = new RegExp(c);
+  let float_rx = "/^\s+|\s+$/g";
+  let d = new RegExp(float_rx);
   if (d.test(value)) {
     return true;
   } else {
