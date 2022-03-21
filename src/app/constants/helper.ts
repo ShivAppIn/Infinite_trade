@@ -1,6 +1,6 @@
 export const checkSpaceAtStartEnd = (value: string) => {
-  // the message will go away if you split the regex string into multiple concatenated strings or move it into a variable.
-  if (/^\s+|\s+$/g.test(value)) {
+  let d = new RegExp("/^\s+|\s+$/g");
+  if (d.test(value)) {
     return true;
   } else {
     return false;
