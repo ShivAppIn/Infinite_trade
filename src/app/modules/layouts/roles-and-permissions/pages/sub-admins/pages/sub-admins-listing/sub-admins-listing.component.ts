@@ -68,7 +68,6 @@ export class SubAdminsListingComponent extends Pagination implements OnInit {
   }
 
   fetchCreatedRoles() {
-    return
     let queryObj = {
       pageNo: 1,
       limit: 100,
@@ -84,7 +83,6 @@ export class SubAdminsListingComponent extends Pagination implements OnInit {
 
   getSubAdminListing() {
     this._table.tableRender({ data: [] });
-    return
     this.subscriptions.push(
       this._roles.getSubAdminsList(this.validPageOptions).subscribe((response: any) => {
         this.tempList = response.data;

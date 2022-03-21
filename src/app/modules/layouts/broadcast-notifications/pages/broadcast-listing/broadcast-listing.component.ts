@@ -97,7 +97,6 @@ export class BroadcastListingComponent extends Pagination implements OnInit {
 
   getNotificationListing() {
     this._table.tableRender({ data: [] });
-    return
     this.subscriptions.push(
       this._service.getNotificationList(this.validPageOptions).subscribe((response: any) => {
         this.tempList = response.data;

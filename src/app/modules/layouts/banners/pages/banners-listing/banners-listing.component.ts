@@ -112,7 +112,6 @@ export class BannersListingComponent extends Pagination implements OnInit {
 
   getBannerListing() {
     this._table.tableRender({ data: [] });
-    return
     this.subscriptions.push(
       this._banner.getBannerList(this.validPageOptions).subscribe((response: any) => {
         this.tempList = response.data;

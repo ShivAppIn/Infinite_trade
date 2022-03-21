@@ -65,7 +65,6 @@ export class RoleListingComponent extends Pagination implements OnInit {
 
   getRolesListing() {
     this._table.tableRender({ data: [] });
-    return
     this.subscriptions.push(
       this._roles.getRolesList(this.validPageOptions).subscribe((response: any) => {
         this.tempList = response.data;
