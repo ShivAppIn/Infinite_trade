@@ -51,8 +51,8 @@ export class LazyDirective {
   }
 
   setBackgroundColor() {
-    const color = this.colors[Math.floor(Math.random() * this.colors.length)];
-    this.el.nativeElement.style.backgroundImage = `linear-gradient(135deg,${color})`;
+    // const color = this.colors[Math.floor(Math.random() * this.colors.length)];
+    // this.el.nativeElement.style.backgroundImage = `linear-gradient(135deg,${color})`;
   }
 
 }
