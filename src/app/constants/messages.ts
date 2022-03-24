@@ -25,7 +25,11 @@ export const ACCOUNT_ERROR_MESSAGES = {
   //INVALID_EMAIL: 'Please enter a valid email address',
   INVALID_EMAIL: 'Invalid email address.',
   ONLY_ALPHABET: 'Only alphabets are allowed',
-  INVALID_EMAIL_PASS:'Invalid email  address or password.',
+  INVALID_EMAIL_PASS: 'Invalid email  address or password.',
+  INVALID_NAME:'Invalid Name.',
+  INVALID_CONTACT: 'Invalid Contact Number.',
+  INVALID_COMPANY: 'Invalid Company Name',
+  INVALID_BUSINESS_NAME:'INVALID BUSINESS NAME.'
 };
 
 export const ACCOUNT_SUCCES_MESSAGES = {
@@ -227,3 +231,25 @@ export const TABLE_ERROR_MSG = {
   COMPANY: 'No company available!',
   OEM: 'No OEM available!',
 };
+
+
+export const Location  = [
+  { address: "New Delhi", coordinates:[1,2]  },
+  { address: "Ghaziabad", coordinates:[3,4] },
+  { address: "Hapur", coordinates:[5,6] },
+  { address: "Pilkhuwa", coordinates:[51,6] },
+  { address: "Amroha", coordinates:[50,62] },
+  { address: "Bilaspur", coordinates:[25,36] },
+  { address: "Devband", coordinates:[15,96] },
+  { address: "Itawa", coordinates:[17,88] },
+  { address: "Jhunjhunu", coordinates: [17, 28] },
+  { address: "Kathmandu", coordinates: [47, 38] },
+  { address: "Lodhi", coordinates: [27, 58] },
+  { address: "Mau", coordinates: [17, 28] },
+  { address: "Odisha", coordinates: [37, 48] },
+  { address: "Porbander", coordinates: [72, 18] },
+  { address: "Nainital", coordinates: [70, 82] },
+  { address: "Raipur", coordinates: [73, 89] },
+  { address: "sahsa", coordinates: [47, 28] },
+  { address: "Tirpura", coordinates: [57, 48] }, 
+];

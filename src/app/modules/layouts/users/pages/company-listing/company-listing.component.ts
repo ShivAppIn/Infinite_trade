@@ -17,6 +17,8 @@ export class CompanyListingComponent extends Pagination implements OnInit,OnDest
   searchValue='';
   @ViewChild(CommonMatTableComponent) tableRef: CommonMatTableComponent;
   subscripition: Subscription[]=[];
+  userIds = [];
+
 
   heading = [
     { heading: 'COMPANY NAME', key: 'companyDetail.businessName'},
@@ -96,6 +98,13 @@ export class CompanyListingComponent extends Pagination implements OnInit,OnDest
   sortByListing(event: any) {
     this.sortOptions = event;
     this.getList();
+  }
+
+  checkedUsers(checkedUser: any) {
+    this.userIds = [];
+    for (let item of checkedUser) {
+      this.userIds.push(item._id);
+    }
   }
 
   ngOnDestroy() {

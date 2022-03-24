@@ -1,35 +1,78 @@
 <div class="confirmation-modal popup-ui expand-popup">
+  <form [formGroup]="addOemForm" (ngSubmit)="addOem()">
     <div class="popup-header">
-        <div class="popup-inner-header">
-            <h4>Add OEM</h4>
-            <span class="material-icons close-icon">close</span>
-        </div>
+      <div class="popup-inner-header">
+        <h4>Add OEM</h4>
+        <span class="material-icons close-icon" (click)="close()">close</span>
+      </div>
     </div>
     <div class="popup-body text-left">
-        <div class="popup-form">
-            <div class="inner-form">
-                <mat-label class="mat-label">COMPANY NAME</mat-label>
-                <mat-form-field appearance="outline" class="passwordFormField">
-                    <input matInput />
-                </mat-form-field>
-            </div>
-            <div class="inner-form">
-                <mat-label class="mat-label">EMAIL ADDRESS</mat-label>
-                <mat-form-field appearance="outline" class="passwordFormField">
-                    <input matInput />
-                </mat-form-field>
-            </div>
-            <div class="inner-form">
-                <mat-label class="mat-label">SITE LOCATION</mat-label>
-                <mat-form-field appearance="outline" class="passwordFormField">
-                    <input matInput />
-                </mat-form-field>
-            </div>
+      <div class="popup-form">
+        <div class="inner-form">
+          <mat-label class="mat-label">BUSINESS NAME</mat-label>
+          <mat-form-field appearance="outline" class="passwordFormField">
+            <input
+              matInput
+              formControlName="name"
+              placeholder="FULL NAME"
+              required
+              #name
+            />
+            <mat-error *ngIf="frmCtrl.name.hasError">{{
+              errorMsg?.INVALID_BUSINESS_NAME
+            }}</mat-error>
+          </mat-form-field>
         </div>
+        <div class="inner-form">
+          <mat-label class="mat-label">EMAIL ADDRESS</mat-label>
+          <mat-form-field appearance="outline" class="passwordFormField">
+            <input
+              matInput
+              formControlName="email"
+              placeholder="EMAIL ADDRESS"
+              required
+              #email
+            />
+            <mat-error *ngIf="frmCtrl.email.hasError">{{
+              errorMsg?.INVALID_EMAIL
+            }}</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="inner-form">
+          <mat-label class="mat-label">LOCATION</mat-label>
+          <mat-form-field appearance="outline" class="passwordFormField">
+            <input
+              type="text"
+              placeholder="LOCATION"
+              aria-label="LOCATION"
+              matInput
+              [formControl]="locationSearch"
+              [matAutocomplete]="auto"
+              #company
+            />
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+              <mat-option
+                *ngFor="let option of filteredOptions | async"
+                [value]="option.address"
+              >
+                {{ option.address }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </div>
+      </div>
     </div>
     <div class="popup-footer">
-        <div class="single-btn">
-            <button mat-flat-button class="btn btn-primary butn butn__new">CREATE</button>
-        </div>
+      <div class="single-btn">
+        <button
+          type="submit"
+          mat-flat-button
+          class="btn btn-primary butn butn__new"
+          [disabled]="addOemForm.invalid"
+        >
+          CREATE
+        </button>
+      </div>
     </div>
+  </form>
 </div>

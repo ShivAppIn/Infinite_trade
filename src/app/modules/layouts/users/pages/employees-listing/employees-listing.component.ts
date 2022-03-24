@@ -17,12 +17,14 @@ export class EmployeesListingComponent extends Pagination implements OnInit,OnDe
   queryObj = {};
   searchValue='';
   @ViewChild(CommonMatTableComponent) tableRef: CommonMatTableComponent;
-  subscripition: Subscription[]=[];
+  subscripition: Subscription[] = [];
+  userIds = [];
+  
 
   heading = [
     { heading: 'NAME', key: 'name'},
     { heading: 'EMAIL', key: 'email' },
-    { heading: 'NUMBER', key: 'companyDetail.officeNo' },
+    { heading: 'NUMBER', key: 'mobileNo' },
     { heading: 'COMPANY', key: 'companyDetail.businessName'},
     { heading: 'TRADE', key: 'companyDetail.availableTrades'},
     { heading: 'DATE JOINED', key: 'createdAt', align: 'center' , type: "date"},
@@ -35,6 +37,7 @@ export class EmployeesListingComponent extends Pagination implements OnInit,OnDe
   ) {
     super();
     this.setSearchSubscription();
+    this.addEmployeeListing();
   }
 
   ngOnInit(): void {
@@ -46,6 +49,13 @@ export class EmployeesListingComponent extends Pagination implements OnInit,OnDe
       debounceTime(500)
     ).subscribe((searchValue: string) => {
       this.searchValue = searchValue;
+      this.getUserList();
+    })
+    )
+  }
+
+  private addEmployeeListing() {
+    this.subscripition.push(this._user._addEmployeeListing.subscribe((val) => {
       this.getUserList();
     })
     )
@@ -98,6 +108,13 @@ export class EmployeesListingComponent extends Pagination implements OnInit,OnDe
   sortByListing(event: any) {
     this.sortOptions = event;
     this.getList();
+  }
+
+  checkedUsers(checkedUser: any) {
+    this.userIds = [];
+    for (let item of checkedUser) {
+      this.userIds.push(item._id);
+    }
   }
 
 

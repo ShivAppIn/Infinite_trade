@@ -6,6 +6,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 const inrRoutes: Routes = [
   { path: '', component: AddEditOemComponent }
@@ -16,11 +18,13 @@ const inrRoutes: Routes = [
   declarations: [AddEditOemComponent],
   imports: [
     CommonModule,
-    MatButtonModule,
-    MatInputModule,
     MatIconModule,
+    MatButtonModule,
     MatFormFieldModule,
+    MatInputModule,
     RouterModule.forChild(inrRoutes),
+    ReactiveFormsModule,
+    MatAutocompleteModule,
   ],
 })
 export class AddEditOemModule { }

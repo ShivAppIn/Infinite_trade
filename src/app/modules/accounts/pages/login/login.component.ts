@@ -59,11 +59,9 @@ export class LoginComponent implements OnInit {
     }, (error) => {
       if (error) {
         if (error.statusCode == 403) {
-          this._toast.error(ACCOUNT_ERROR_MESSAGES.INVALID_EMAIL_PASS);
           this.frmCtrl.password.reset();
           this.passRef.nativeElement.focus();
         } else if (error.statusCode == 400) {
-          this._toast.error(ACCOUNT_ERROR_MESSAGES.INVALID_EMAIL_PASS);
           this.emailRef.nativeElement.focus();
         }
       }

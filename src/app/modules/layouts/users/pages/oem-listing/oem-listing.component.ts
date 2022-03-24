@@ -18,7 +18,9 @@ export class OemListingComponent extends Pagination implements OnInit,OnDestroy 
 
   @ViewChild(CommonMatTableComponent) tableRef: CommonMatTableComponent;
 
-  subscripition: Subscription[]=[];
+  subscripition: Subscription[] = [];
+  
+  userIds = [];
 
 
   heading = [
@@ -35,6 +37,7 @@ export class OemListingComponent extends Pagination implements OnInit,OnDestroy 
   ) {
     super();
     this.setSearchSubscription();
+    this.addOemListing();
   }
 
   ngOnInit(): void {
@@ -46,6 +49,13 @@ export class OemListingComponent extends Pagination implements OnInit,OnDestroy 
       debounceTime(500)
     ).subscribe((searchValue: string) => {
       this.searchValue = searchValue;
+      this.getUserList();
+    })
+    )
+  }
+
+  private addOemListing() {
+    this.subscripition.push(this._user._addOEMListing.subscribe((val) => {
       this.getUserList();
     })
     )
@@ -102,7 +112,10 @@ export class OemListingComponent extends Pagination implements OnInit,OnDestroy 
   }
 
   checkedUsers(checkedUser: any) {
-    // for delete listing
+    this.userIds = [];
+    for (let item of checkedUser) {
+      this.userIds.push(item._id);
+    }
   }
 
   ngOnDestroy() {

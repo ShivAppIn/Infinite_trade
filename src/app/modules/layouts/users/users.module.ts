@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { UsersComponent } from './users.component';
 import { UsersService } from './_service/users.service';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 const inrRoute: Routes = [
   {
@@ -41,7 +42,8 @@ const inrRoute: Routes = [
     MatButtonModule,
     SearchRendererModule,
     TabsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatAutocompleteModule
   ],
   providers: [UsersService]
 })

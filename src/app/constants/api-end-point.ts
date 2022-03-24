@@ -1,4 +1,5 @@
 const ADMIN_BASE: string = 'admin';
+const COMMON_BASE: string = 'common';
 const BANNER_BASE: string = 'banner';
 const NOTIFICATION_BASE: string = 'notification';
 const ROLE_BASE: string = 'role';
@@ -13,6 +14,19 @@ export const LOGIN_API = `${ADMIN_BASE}/login`;
 export const LOGOUT_API = `${ADMIN_BASE}/logout`;
 export const FORGOT_PASSWORD_API = `${ADMIN_BASE}/forgot-password`;
 export const RESET_PASSWORD_API = `${ADMIN_BASE}/reset-password`;
+
+
+// @COMMON_COMPANY_SEARCH
+export const COMPANY_SEARCH = `${COMMON_BASE}/company-search`
+
+
+// @ ADD Employee
+export const ADD_EMPLOYEE = `${ADMIN_BASE}/add-employee`
+
+// @ADD OEM
+
+export const ADD_OEM = `${ADMIN_BASE}/add-client`
+    
 export const CHANGE_PASSWORD_API = `${ADMIN_BASE}/change-password`;
 export const VERIFY_OTP_API = `${ADMIN_BASE}/verify-otp`;
 export const USER_INFO_API = `${ADMIN_BASE}/profile`;
