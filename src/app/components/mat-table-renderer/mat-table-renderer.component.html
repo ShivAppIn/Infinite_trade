@@ -1,4 +1,4 @@
-<div class="page-table" [ngClass]="cls">
+<!-- <div class="page-table" [ngClass]="cls">
   <div class="listing-filter" *ngIf="removeId != 1">
     <div class="left-side-filters">
       <app-search-renderer [placeholder]="placeholder" (renderSearch)="searchTable($event)">
@@ -31,7 +31,6 @@
   <div class="table-container cst-scroll">
     <table mat-table [dataSource]="dataSource" matSort matSortStart="desc" class="mat-elevation-z1" matSortDisableClear
       (matSortChange)="sortingData($event)">
-      <!-- Position Column -->
       <ng-container *ngFor="let row of heading" [matColumnDef]="row.heading">
         <th mat-header-cell *matHeaderCellDef mat-sort-header [disabled]="!row.sort" class="table-header" [ngClass]="{
             noshort: !row.sort,
@@ -145,7 +144,6 @@
 
   <app-filter [@openClose]="isOpen ? 'open' : 'closed'" (apply)="applyFilter($event)">
     <ng-content select="[role=filter]"></ng-content>
-    <!--binding-->
   </app-filter>
 
-</div>
+</div> -->
