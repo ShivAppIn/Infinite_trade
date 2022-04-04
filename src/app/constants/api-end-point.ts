@@ -15,6 +15,8 @@ export const LOGOUT_API = `${ADMIN_BASE}/logout`;
 export const FORGOT_PASSWORD_API = `${ADMIN_BASE}/forgot-password`;
 export const RESET_PASSWORD_API = `${ADMIN_BASE}/reset-password`;
 
+// @Delete User
+export const DELETE_USERS = `${ADMIN_BASE}/delete-user`;
 
 // @COMMON_COMPANY_SEARCH
 export const COMPANY_SEARCH = `${COMMON_BASE}/company-search`

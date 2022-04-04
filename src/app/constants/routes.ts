@@ -50,6 +50,9 @@ export const ADD_EDIT_USERS = 'add-edit-user';
 export const ADD_EDIT_OEM = 'add-edit-oem';
 export const ADD_EDIT_COMPANY = 'add-edit-company';
 
+export const OEM_TEAM_LISTING = 'oem-teams';
+export const ADD_OEM = 'add-edit'
+
 
 
 

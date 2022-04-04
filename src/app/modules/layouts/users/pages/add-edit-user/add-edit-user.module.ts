@@ -8,6 +8,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { UploadImgModule } from 'src/app/components/upload-img/upload-img.module';
+import { ItemBoxModule } from 'src/app/components/item-box/item-box.module';
 
 
 const inrRoutes: Routes = [
@@ -26,6 +28,8 @@ const inrRoutes: Routes = [
     RouterModule.forChild(inrRoutes),
     ReactiveFormsModule,
     MatAutocompleteModule,
+    UploadImgModule,
+    ItemBoxModule
   ],
 })
 export class AddEditUserModule { }

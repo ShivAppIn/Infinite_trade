@@ -218,19 +218,23 @@ mat-icon,
 
 .mat-tab-group {
     background-color: $white;
-    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
-
     .mat-tab-label-container {
         .mat-tab-labels {
             border-bottom: 1px solid var(--light-gray);
             margin-bottom: 1px;
 
             .mat-tab-label {
-                opacity: 1;
-                height: auto;
-                padding: 15px 20px;
-                min-width: 80px;
-                color: $gray;
+                // opacity: 1;
+                // height: auto;
+                // padding: 15px 20px;
+                // min-width: 80px;
+                // color: $gray;
+                opacity: 1 !important;
+                color: rgba(0, 0, 0, 0.87);
+                margin-right: 15px;
+                font-size: 14px !important;
+                font-weight: 600 !important;
+                background-color: #f2f2f2;
 
                 &.mat-tab-label-active {
                     color: $primary;
@@ -239,6 +243,11 @@ mat-icon,
 
             .mat-ink-bar {
                 background: $primary;
+            }
+            .mat-tab-label-content {
+                font-weight: 600;
+                padding-top: 7px;
+                color: black;
             }
         }
     }
@@ -457,7 +466,6 @@ mat-icon,
         }
     }
 }
-
 
 .mat-tab-list {
     .mat-tab-labels {

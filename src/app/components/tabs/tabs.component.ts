@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { TERM_CONDITIONS, PRIVACY_POLICY, ABOUT_US, FAQ, ROLES, SUB_ADMINS, COMPANY_LISTING, OEM_LISTING, EMPLOYEES_LISTING } from '../../constants/routes';
+import { ABS_ADD_EDIT_OEM, ABS_OEM_TEAMS } from "src/app/constants/absolute-route";
+import { TERM_CONDITIONS, PRIVACY_POLICY, ABOUT_US, FAQ, ROLES, SUB_ADMINS, COMPANY_LISTING, OEM_LISTING, EMPLOYEES_LISTING, OEM_TEAM_LISTING, ADD_OEM } from '../../constants/routes';
 
 @Component({
   selector: "app-tabs",
@@ -10,6 +11,8 @@ export class TabsComponent implements OnInit {
   @Input() tabName;
   @Input() userId;
   @Input() isIndividuallySubscribed = false;
+  @Input() addEditOEM:any
+
   navLinks: any;
 
 
@@ -27,10 +30,9 @@ export class TabsComponent implements OnInit {
         this.navLinks = ROLES_ACCESS_TAB_LINKS;
         break;
       
-        case 'userManagementListing':
+      case 'userManagementListing':
           this.navLinks = USERS_MANAGMENT_LISTING;
-          break;
-  
+        break;
       default:
         break;
     }

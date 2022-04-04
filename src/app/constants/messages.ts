@@ -95,6 +95,7 @@ export const NOTIFICATION_ERROR_MESSAGES = {
 };
 
 export const MAX_IMG_SELECTION = 4;
+export const MAX_USER_IMAGE_SELECTION = 1;
 export const FILE_EXIST = 'Selected image is already exist';
 export const MAX_IMG_SELECTION_ERR = (count = MAX_IMG_SELECTION) =>
   `You can select upto ${count} images only`;
@@ -115,6 +116,9 @@ export const TITLE_CONFIRMATION = (titleText) => `${titleText}`;
 export const MSSG_CONFIRMATION = (MssgText) =>
   `Are you sure you want to ${MssgText}?`;
 
+export const TITLE_CONFIRMATION_DELETE = (titleText) => `Delete ${titleText}?`;
+export const MSSG_CONFIRMATION_DELETE = (MssgText) =>
+  `Are you sure you want to delete ${MssgText}? \n Once deleted the account will be inaccesible.`;
 export const EDITOR_COMMON_MESSAGES = {
   CONTENT_REQ: 'Please fill some information about page',
   CMS_ACTION: (action: string) => `Content ${action} successfully`,

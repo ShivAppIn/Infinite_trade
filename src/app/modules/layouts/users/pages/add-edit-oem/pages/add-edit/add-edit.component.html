@@ -1,0 +1,70 @@
+<div class="popup-width">
+  <div class="flex-form">
+    <div class="image-uploader">
+      <ng-container *ngIf="!pictures.length">
+        <img class="img" src="/assets/images/Image.svg">
+      </ng-container>
+      <ng-container *ngIf="
+      pictures?.length < maxUserImageSelection
+        ">
+        <app-upload-img [isMultiSelection]="false" (sendFiles)="getSelectedFile($event)">
+        </app-upload-img>
+      </ng-container>
+      <ng-container *ngIf="
+      pictures.length > 0 
+        ">
+        <ng-container *ngFor="let item of pictures; let i = index">
+          <app-item-box [data]="item?.base64Url ? item?.base64Url : item" [currentIndex]="i"
+            (sendCurrentIndex)="getCurrentIndex($event)">
+          </app-item-box>
+        </ng-container>
+      </ng-container>
+
+    </div>
+    <div class="confirmation-modal popup-ui expand-popup">
+      <form [formGroup]="addOemForm" (ngSubmit)="addOem()">
+        <div class="text-left">
+          <div class="popup-form">
+            <div class="inner-form">
+              <mat-label class="mat-label">BUSINESS NAME</mat-label>
+              <mat-form-field appearance="outline" class="passwordFormField">
+                <input matInput formControlName="name" placeholder="FULL NAME" required #name />
+                <mat-error *ngIf="frmCtrl.name.hasError">{{
+                  errorMsg?.INVALID_BUSINESS_NAME
+                  }}</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="inner-form">
+              <mat-label class="mat-label">EMAIL ADDRESS</mat-label>
+              <mat-form-field appearance="outline" class="passwordFormField">
+                <input matInput formControlName="email" placeholder="EMAIL ADDRESS" required #email />
+                <mat-error *ngIf="frmCtrl.email.hasError">{{
+                  errorMsg?.INVALID_EMAIL
+                  }}</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="inner-form">
+              <mat-label class="mat-label">LOCATION</mat-label>
+              <mat-form-field appearance="outline" class="passwordFormField">
+                <input type="text" placeholder="LOCATION" aria-label="LOCATION" matInput [formControl]="locationSearch"
+                  [matAutocomplete]="auto" #company />
+                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                  <mat-option *ngFor="let option of filteredOptions | async" [value]="option.address">
+                    {{ option.address }}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="popup-footer">
+          <div class="single-btn">
+            <button type="submit" mat-flat-button class="btn btn-primary butn butn__new">
+              CREATE
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

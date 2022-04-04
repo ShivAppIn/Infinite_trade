@@ -101,6 +101,7 @@ export class CommonMatTableComponent extends Pagination implements OnInit {
           this.setErrorMSg();
           this.length = respData?.total;
           this.pageSize = respData?.limit;
+          this.selection.clear()
         }
       },
       () => {

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { ADD_EMPLOYEE, ADD_OEM, COMPANY_SEARCH, USER_LIST_API } from 'src/app/constants/api-end-point';
+import { ADD_EMPLOYEE, ADD_OEM, COMPANY_SEARCH, DELETE_USERS, USER_LIST_API } from 'src/app/constants/api-end-point';
 import { HttpService } from 'src/app/services/http/http.service';
 
 @Injectable({
@@ -30,5 +30,9 @@ export class UsersService {
 
   addOem(body: any) {
     return this._http.post(ADD_OEM, body);
+  }
+
+  deleteUsers(body: any) {
+    return this._http.post(DELETE_USERS, body);
   }
 }

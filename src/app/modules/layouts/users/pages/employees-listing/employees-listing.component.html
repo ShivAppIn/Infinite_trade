@@ -1,3 +1,5 @@
+<span class="table-delete" *ngIf="userIds.length" (click)="deleteEmployee()"><img src="/assets/images/basic _ trash_full.svg">Delete 
+{{deleteText}}</span>
 <common-mat-table [heading]="heading" (find)="paginationWithSearch($event,0)" (page)="paginationWithSearch($event,1)"
     (sortData)="sortByListing($event)" (checkUsers)="checkedUsers($event)">
 </common-mat-table>

@@ -1,1 +1,17 @@
 // for future refrence
+.table-delete {
+    position: absolute;
+    text-align: right;
+    color: #828282;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 99;
+    right: 64px;
+    display: inline;
+    margin-top: -51px;
+    img {
+        position: relative;
+        top: 3px;
+        right: 4px;
+    }
+}

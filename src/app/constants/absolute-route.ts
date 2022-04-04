@@ -9,6 +9,9 @@ export const ABS_FORGOT_PASSWORD = `/${routes.ACCOUNT}/${routes.FORGOT_PASSWORD}
 export const ABS_RESET_PASSWORD = `/${routes.ACCOUNT}/${routes.RESET_PASSWORD}`;
 export const ABS_RESEND_EMAIL = `/${routes.ACCOUNT}/${routes.RECOVERY_EMAIL}`;
 
+export const ABS_ADD_EDIT_OEM = `/${routes.USERS}/${routes.ADD_EDIT_OEM}/${routes.ADD_OEM}`;
+export const ABS_OEM_TEAMS = `/${routes.USERS}/${routes.ADD_EDIT_OEM}/${routes.OEM_TEAM_LISTING}`;
+
 
 export const ABS_PROFILE = `/${routes.PROFILE}`;
 export const ABS_PROFILE_EDIT = `/${routes.PROFILE}/${routes.EDIT}`;

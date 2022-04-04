@@ -1,8 +1,12 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { CommonMatTableComponent } from 'src/app/components/common-mat-table/common-mat-table.component';
 import { MatTableService } from 'src/app/components/common-mat-table/mat-table-service.service';
+import { ConfirmationModalComponent } from 'src/app/components/confirmation-modal/confirmation-modal.component';
+import { ToastService } from 'src/app/components/toast-notification/toast.service';
+import {  MSSG_CONFIRMATION_DELETE, TITLE_CONFIRMATION_DELETE } from 'src/app/constants/messages';
 import { Pagination } from 'src/app/constants/pagination';
 import { CommonService } from 'src/app/services/common/common.service';
 import { UsersService } from '../../_service/users.service';
@@ -19,6 +23,7 @@ export class EmployeesListingComponent extends Pagination implements OnInit,OnDe
   @ViewChild(CommonMatTableComponent) tableRef: CommonMatTableComponent;
   subscripition: Subscription[] = [];
   userIds = [];
+  deleteText:string
   
 
   heading = [
@@ -33,7 +38,9 @@ export class EmployeesListingComponent extends Pagination implements OnInit,OnDe
   constructor(
     private _tableSer: MatTableService,
     private _user: UsersService,
-    private _common:CommonService
+    private _common: CommonService,
+    private _dialog: MatDialog,
+    private _toast:ToastService
   ) {
     super();
     this.setSearchSubscription();
@@ -112,11 +119,36 @@ export class EmployeesListingComponent extends Pagination implements OnInit,OnDe
 
   checkedUsers(checkedUser: any) {
     this.userIds = [];
+    this.deleteText = checkedUser.length === 1 ? checkedUser[0]?.name : `selected (${checkedUser.length})`
     for (let item of checkedUser) {
       this.userIds.push(item._id);
     }
   }
 
+  deleteEmployee() {
+    const dialog = this._dialog.open(ConfirmationModalComponent, {
+      data: {
+        title: this.userIds.length==1 ? TITLE_CONFIRMATION_DELETE(this.deleteText): TITLE_CONFIRMATION_DELETE(`${this.userIds.length} users`) ,
+        message:this.userIds.length==1 ? MSSG_CONFIRMATION_DELETE(`${this.deleteText}'s account`): MSSG_CONFIRMATION_DELETE(`the selected ${this.userIds.length} users`) ,
+        btn2: 'CANCEL',
+        btn1:'DELETE'
+      }
+    });
+    dialog.afterClosed().subscribe(result => {
+      if (result) {
+        this.subscripition.push(
+          this._user.deleteUsers({ userIds: this.userIds }).subscribe((response: any) => {
+            this.userIds = [];
+            this._toast.success(response?.message);
+          },
+            (error) => {
+            this._toast.error(error?.message)
+          })
+          )
+          this.getUserList();
+      }
+    })
+  }
 
   ngOnDestroy() {
     if (this.subscripition.length) {

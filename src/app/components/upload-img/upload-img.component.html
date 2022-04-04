@@ -1,10 +1,10 @@
 <ng-container *ngIf="showButtonHandler; else iconHandler">
   <div class="default-preview">
-    <img [src]="'assets/images/svg/image-add-fill-copy.svg'" alt="img"/>
+    <!-- <img [src]="'assets/images/svg/image-add-fill-copy.svg'" alt="img"/>
     <div class="upload-support">
       {{ textInfo }}
-    </div>
-    <button type="button" mat-raised-button color="primary" class="upload-btn" (click)="myInputFile.click()">
+    </div> -->
+    <button type="button" mat-stroked-button class="btn btn-black-outline" (click)="myInputFile.click()">
       <input #myInputFile type="file" onclick="this.value = null" style="display: none" accept="image/*"
         (change)="fileChangeEvent($event)" [multiple]="isMultiSelection" />
       Upload Photo
