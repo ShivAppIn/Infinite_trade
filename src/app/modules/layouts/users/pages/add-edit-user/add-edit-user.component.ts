@@ -103,10 +103,9 @@ export class AddEditUserComponent extends Pagination implements OnInit,OnDestroy
 
   async addUser() {
     let formValue = this.addUserForm.value;
-    let imageUrl : any;
     if (this.pictures) {
       for (let i = 0; i < this.pictures.length; i++) {
-        imageUrl= await this.uploadImage(this.pictures[i]['realFile'], formValue );
+        await this.uploadImage(this.pictures[i]['realFile'], formValue );
       }
     }
     this.addUserValidation();
@@ -131,7 +130,6 @@ export class AddEditUserComponent extends Pagination implements OnInit,OnDestroy
     return new Promise((resolve, reject) => {
       this._s3.uploadFile(selectedFile).then((response: any) => {
         if (response && response.Location) {
-          console.log('img',response.location)
           formValue.profilePicture = response.Location;
           resolve(true);
         }

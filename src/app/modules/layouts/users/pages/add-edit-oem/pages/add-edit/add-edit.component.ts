@@ -125,7 +125,6 @@ export class AddEditComponent implements OnInit {
     // if(this.data && !this.data.imageUrl){
     //   this.data['imageUrl'] = this.boatPicture[0].base64Url;
     // }
-    console.log(this.pictures);
   }
 
   getCurrentIndex(currentIndex: number) {

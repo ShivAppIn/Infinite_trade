@@ -29,7 +29,8 @@ export const ACCOUNT_ERROR_MESSAGES = {
   INVALID_NAME:'Invalid Name.',
   INVALID_CONTACT: 'Invalid Contact Number.',
   INVALID_COMPANY: 'Invalid Company Name',
-  INVALID_BUSINESS_NAME:'INVALID BUSINESS NAME.'
+  INVALID_BUSINESS_NAME: 'INVALID BUSINESS NAME.',
+  PROFILE_PIC:'Profile picture is required.'
 };
 
 export const ACCOUNT_SUCCES_MESSAGES = {
@@ -58,6 +59,9 @@ export const PASSWORD_ERROR_MESSAGES = {
   OLD_NEW_PASSWORD_MATCH_ERR: "Old & New password can't be the same",
   WRONG_OLD_PASSWORD: 'Entered old password was incorrect',
 };
+export const ADD_USER_ERROR = {
+  PROFILE_PIC:'Profile picture is required.'
+}
 
 export const LISTING_COMMON_MESSAGES = {
   ACTIVE_TITLE: 'Unblock Confirmation',
