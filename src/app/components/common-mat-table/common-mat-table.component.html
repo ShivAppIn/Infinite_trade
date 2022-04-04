@@ -6,6 +6,7 @@
   matSortStart="desc"
   matSortDisableClear
   (matSortChange)="sortingData($event)"
+  summary="common mat table"
 >
   <ng-container *ngFor="let row of heading" [matColumnDef]="row.heading">
     <ng-container *ngIf="row.heading === 'select'">
