@@ -54,11 +54,11 @@ export class AddEditComponent implements OnInit {
     this.filterValues = this.options.filter((option) =>
       option.address.toLowerCase().includes(filterValue)
     );
-    this.addLocationValues;
+    this.addLocationValues();
     return this.filterValues;
   }
 
-  get addLocationValues() {
+  addLocationValues() {
     if (this.filterValues.length === 1 && this.filterValues[0]?.address) {
       if (this.locationSearch.value == this.filterValues[0].address) {
         this.cordinate.push(
@@ -70,7 +70,6 @@ export class AddEditComponent implements OnInit {
         this.addOemForm.controls['location']['controls']['address'].patchValue(
           this.filterValues[0]?.address
         );
-        return true;
       } else {
         this.addOemForm.controls['location']['controls']['address'].patchValue(
           ''

@@ -61,7 +61,7 @@ export class AddEditUserComponent extends Pagination implements OnInit,OnDestroy
     if (val.length >= 1) {
       this.subscripition.push(this._user.companySearch(this.queryObj).subscribe((response => {
         this.arrOfCompany.push.apply(this.arrOfCompany, response.data);
-        this.companyBoolean
+        this.companyBoolean()
       })))
 
       return this.arrOfCompany
@@ -81,11 +81,10 @@ export class AddEditUserComponent extends Pagination implements OnInit,OnDestroy
     });
   }
 
-  get companyBoolean() {
+companyBoolean() {
     if (this.arrOfCompany.length === 1 && this.arrOfCompany[0]?._id) {
       if (this.companySearch.value === this.arrOfCompany[0].businessName) {
         this.companyIds.push(this._fb.control(this.arrOfCompany[0]?._id));
-        return true
       } else {
         this.companyIds.removeAt(0);
       }
